@@ -29,7 +29,7 @@
 
 Documentação Técnica do Projeto "CHALLENGE INGREDION - Sprint 3"
 
-![Versão 2.0.0](https://img.shields.io/badge/Vers%C3%A3o%202.0.0-gray?style=flat) 
+![Versão 1.0.0](https://img.shields.io/badge/Vers%C3%A3o%201.0.0-gray?style=flat) 
 
 Autores: Jonatas Gomes, Iolanda Manzali, Murilo Nasser, Pedro Sousa, Amanda Fragnan
 
