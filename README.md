@@ -6,11 +6,11 @@
 
 <br>
 
-# PROJETO - :artificial_satellite: SPRINT 3 INGREDION  
+# PROJETO - GLOBAL SOLUTION 2  
 
 ![capa](assets/capa.jpeg)
 
-## Grupo 9
+## Grupo 8
 
 ## 👨‍🎓 Integrantes: 
 - <a href="https://www.linkedin.com/in/jonatasgomes">Jônatas Gomes Alves</a>
