@@ -27,7 +27,7 @@
 
 ## :page_with_curl:DOCUMENTAÇÃO
 
-Documentação Técnica do Projeto "CHALLENGE INGREDION - Sprint 3"
+Documentação Técnica do Projeto "GLOBAL SOLUTION - 2o SEMESTRE"
 
 ![Versão 1.0.0](https://img.shields.io/badge/Vers%C3%A3o%201.0.0-gray?style=flat) 
 
@@ -35,39 +35,12 @@ Autores: Jonatas Gomes, Iolanda Manzali, Murilo Nasser, Pedro Sousa, Amanda Frag
 
 ## 🔍 SOBRE O PROJETO
 
-Este projeto, referente a terceira fase do Challenge Ingredion do Curso de Inteligência Artificial da FiAP (1TIAO), tem como foco o desenvolvimento de um modelo de Inteligência Artificial para cálculo de previsão da produtividade agrícola, utilizando NDVI (Índice de Vegetação Normalizada), dados climáticos, de produtividade e custo.
-            
-Os datasets de NDVI, custos e produtividade não possuem valores ausentes. Os dataset do INMET utilizados no programa foram previamente tratados e limpos antes de serem carregados via APEX para a nuvem Oracle. Isso ocorreu pela natureza diversa das formatações e pela necessidade de padronização dos dados para garantir a integridade e a precisão das análises. Os valores faltantes foram tratados com a média temporal dos dados disponíveis, e os dados foram convertidos para o formato necessário para análise nessa aplicação.
-            
-O projeto foi desenvolvido em Python, utilizando as bibliotecas Streamlit, Pandas, NumPy, Scikit-learn, Plotly, Pickle, Os, Requests, Locale e Datetime.       
+A cidade de São Paulo enfrenta, ano após ano, o desafio crescente das enchentes, alagamentos, chuvas intensas e enxurradas. Fenômenos como esses têm se tornado cada vez mais frequentes e severos, impactando diretamente a vida dos moradores, a mobilidade urbana e a infraestrutura da capital. Em 2025, por exemplo, episódios de chuva forte colocaram praticamente todas as regiões da cidade em estado de atenção, com registros de ruas e avenidas alagadas, bairros como Santo Amaro e Piraporinha submersos, quedas de árvores e milhares de imóveis sem energia elétrica.
 
-** obs: todo o código desse projeto foi escrito utilizando a IDE (VSCode).
+A topografia acidentada, a impermeabilização do solo e o crescimento acelerado da cidade agravam o risco de transbordamento de rios e córregos, além de potencializar o impacto das enxurradas e enchentes. Mesmo com investimentos em drenagem, monitoramento e sistemas de alerta, São Paulo segue vulnerável a eventos extremos, que causam prejuízos materiais, perdas humanas e demandam respostas rápidas do poder público.
 
-### 🛠️ MELHORIAS IMPLEMENTADAS EM RELAÇÃO À VERSÃO 1.0.0
+Diante desse cenário, torna-se fundamental investir em soluções digitais inovadoras, capazes de prever, monitorar e mitigar os impactos desses desastres. A análise de dados reais, o uso de inteligência artificial e o cruzamento de informações meteorológicas e ambientais permitem antecipar riscos, emitir alertas e orientar ações preventivas, contribuindo para uma cidade mais resiliente e segura para todos
 
-  * NOVOS DATASETS:
-     - CONAB: custos de produção das culturas de Triticale, Trigo, Amendoim, Batata-inglesa, Feijão (1a safra), Tomate, Sorgo e Soja.
-     - INMET: dados INMET das estações meterreológicas A001 (Brasilia), A020 (Pedro Afonso), A025 (Rio Verde), A042 (Barreiras), A426 (Guanambi), A839 (Passo Fundo), A843 (Dois Vizinhos), A852 (São Luiz Gonzaga), A853 (Cruz Alta), A859 (Caçador) e A721 (Dourados) 
-     - SIDRA/IBGE: dados agricolas para as culturas de Triticale, Trigo, Amendoim, Batata-inglesa, Feijão (1a safra), Tomate, Sorgo e Soja.
-
-
-* MODULARIZAÇÃO DA APLICAÇÃO:
-   
-    A nova estrutura da aplicação encontrase modularizada da seguinte forma:
-    
-- app.py: script inicial para a aplicação, arquivo principal que direciona as outras páginas.
-    
-- app_carga.py: permite o upload de arquivos CSV através de uma interface Streamlit, validando e enviando dados agrícolas (NDVI, produtividade e meteorológicos) para uma API Oracle. Ele faz o pré-processamento dos dados, exibe uma prévia e realiza a carga em lote com tratamento de erros e feedback ao usuário.
-    
-- app_dados.py: realiza a conexão com uma API Oracle REST para coletar dados agrícolas, como NDVI, produtividade, dados meteorológicos e custos. Ele faz o tratamento das requisições, lida com paginação automática e retorna os dados organizados em DataFrames para análise no Streamlit.
-    
-- app_links.py: exibe uma página no Streamlit com links úteis para acesso a bases de dados agrícolas e meteorológicos, como IBGE, INMET, CONAB e SATVEG. Ele serve como um atalho rápido para fontes de dados essenciais no contexto do projeto.
-    
-- app_produtividade.py: realiza a estimativa de produtividade agrícola utilizando um modelo de machine learning treinado, acessível por meio de uma interface Streamlit. Ele permite ao usuário selecionar localidade, cultura, ano, mês e área plantada, realizando a previsão da produtividade e calculando a produção total estimada.
-    
-- app_sobre.py: apresenta informações sobre o projeto de previsão de produtividade agrícola, desenvolvido no Challenge Ingredion da FIAP, explicando os objetivos, metodologia, tratamento dos dados e as bibliotecas utilizadas. Também apresenta os membros da equipe e os próximos passos planejados para evolução e expansão do projeto.
-    
-- app_treinamento.py: permite treinar diversos modelos de machine learning supervisionados para previsão de produtividade agrícola, utilizando dados carregados da base Oracle. O usuário seleciona os modelos desejados, e o sistema realiza ajuste de hiperparâmetros, avalia o desempenho e salva o melhor modelo para ser utilizado nas previsões futuras.
     
 ### ❗ PRÉ-REQUISITOS 
 
