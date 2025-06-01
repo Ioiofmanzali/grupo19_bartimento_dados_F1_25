@@ -8,7 +8,7 @@
 
 # PROJETO - GLOBAL SOLUTION 2  
 
-![capa](assets/capa.jpeg)
+![capa](https://github.com/Ioiofmanzali/GLOBAL_SOLUTION_2_-GRUPO81TIAO/blob/main/assets/enchente1.JPG)
 
 ## Grupo 8
 
