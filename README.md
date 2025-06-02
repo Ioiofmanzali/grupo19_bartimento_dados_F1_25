@@ -41,6 +41,8 @@ A topografia acidentada, a impermeabilização do solo e o crescimento acelerado
 
 Diante desse cenário, torna-se fundamental investir em soluções digitais inovadoras, capazes de prever, monitorar e mitigar os impactos desses desastres. A análise de dados reais, o uso de inteligência artificial e o cruzamento de informações meteorológicas e ambientais permitem antecipar riscos, emitir alertas e orientar ações preventivas, contribuindo para uma cidade mais resiliente e segura para todos
 
+
+link wokwi: https://wokwi.com/projects/432676821844364289
     
 ### ❗ PRÉ-REQUISITOS 
 
