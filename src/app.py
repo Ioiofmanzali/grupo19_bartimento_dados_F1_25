@@ -66,7 +66,7 @@ volume_chuva_hoje = st.sidebar.number_input(
 )
 
 st.sidebar.markdown("---")
-st.sidebar.subheader("FIAP - Global Solution - Grupo 22")
+st.sidebar.subheader("FIAP - Global Solution - Grupo 08")
 st.sidebar.markdown("""
 <div style='font-size: 1em; line-height: 0.6'>
     <p>Iolanda Helena Fabbrini Manzali de Oliveira</p>
