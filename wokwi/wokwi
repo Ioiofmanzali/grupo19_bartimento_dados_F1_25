@@ -1,0 +1,2 @@
+Este código simula uma estação meteorológica no Wokwi, gerando dados de temperatura, umidade, chuva e nível do rio, exibindo-os localmente e enviando via API ORACLE para um programa de monitoramento
+de risco de enchente.
