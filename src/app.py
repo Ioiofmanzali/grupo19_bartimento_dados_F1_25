@@ -8,14 +8,11 @@ from datetime import datetime
 from utils import buscar_nivel_rio, buscar_volume_chuva, salvar_leitura, enviar_alerta_sms, risco_enchente
 import os
 
-
 def on_volume_change():
     salvar_leitura('CHUVA', st.session_state.volume_chuva_hoje)
 
-
 def on_nivel_change():
     salvar_leitura('RIO', st.session_state.nivel_rio_hoje)
-
 
 # --- Configurações e Constantes
 PATH = os.path.dirname(os.path.abspath(__file__))
@@ -24,10 +21,7 @@ PATH_MODELO_PREVISAO_CHUVA = PATH + "/modelos/modelo_previsao_chuva.joblib"
 CIDADE_ALVO = "São Paulo"
 data_atual = datetime.now()
 
-# --- MODIFICAÇÃO AQUI: DEFINIR O NOVO VALOR MÍNIMO
 # Definindo um valor mínimo global para os inputs.
-# Agora, o nível do rio terá um mínimo de 715.0.
-# O volume de chuva ainda pode ser 0.0.
 MIN_CHUVA_INPUT_VALUE = 0.0
 MIN_RIO_INPUT_VALUE = 715.0  # 
 
@@ -43,14 +37,11 @@ except Exception as e:
 try:
     nivel_rio_raw = float(buscar_nivel_rio()['items'][0]['valor'])
     # Garante que o nível do rio não seja menor que o mínimo permitido pelo input
-    # <--- Usando MIN_RIO_INPUT_VALUE aqui
     nivel_rio = max(nivel_rio_raw, MIN_RIO_INPUT_VALUE)
 except Exception as e:
     st.error(
         f"Erro ao buscar nível do rio: {e}. Usando {MIN_RIO_INPUT_VALUE} como padrão.")
     nivel_rio = MIN_RIO_INPUT_VALUE  # 
-# --- FIM DA MODIFICAÇÃO ---
-
 
 # --- Layout da Aplicação
 st.set_page_config(page_title=f"Monitor Enchente {CIDADE_ALVO}", layout="wide")
@@ -62,14 +53,14 @@ count = st_autorefresh(interval=30 * 1000, limit=None,
 limite_grave = st.sidebar.number_input(
     "Nível de Água Considerado Grave (m):",
     min_value=0.0,
-    value=720.0, # <--- MUDE ESTE VALOR PARA UM LIMITE REAL DE ENCHENTE PARA SEU RIO EM METROS
+    value=720.0, 
     step=0.5,
     help="Informe o nível de água em metros."
 )
 limite_moderado = st.sidebar.number_input(
     "Nível de Água Considerado Moderado (m):",
     min_value=0.0,
-    value=718.0, # <--- MUDE ESTE VALOR PARA UM LIMITE REAL DE ENCHENTE PARA SEU RIO EM METROS
+    value=718.0, 
     step=0.5,
     help="Informe o nível de água em metros."
 )
@@ -77,7 +68,7 @@ limite_moderado = st.sidebar.number_input(
 st.sidebar.header("Simulador de Sensores")
 nivel_rio_hoje = st.sidebar.number_input(
     "Nível Atual do Rio (m):",
-    min_value=MIN_RIO_INPUT_VALUE,  # 
+    min_value=MIN_RIO_INPUT_VALUE,   
     value=nivel_rio,
     step=0.5,
     help="Informe o nível do rio em metros.",
@@ -86,7 +77,6 @@ nivel_rio_hoje = st.sidebar.number_input(
 )
 volume_chuva_hoje = st.sidebar.number_input(
     "Volume de Chuva Hoje (mm):",
-    # <--- Usando a nova variável MIN_CHUVA_INPUT_VALUE
     min_value=MIN_CHUVA_INPUT_VALUE,
     value=volume_chuva,
     step=0.5,
@@ -99,16 +89,15 @@ st.sidebar.markdown("---")
 st.sidebar.subheader("FIAP - Global Solution - Grupo 08")
 st.sidebar.markdown("""
 <div style='font-size: 1em; line-height: 0.6'>
-        <p>Iolanda Helena Fabbrini Manzali de Oliveira</p>
-        <p>Pedro Eduardo Soares de Sousa</p>
-        <p>Murilo Carone Nasser</p>
-        <p>Jônatas Gomes Alves</p>
+        <p>Iolanda Manzali</p>
+        <p>Pedro Sousa</p>
+        <p>Murilo Nasser</p>
+        <p>Jônatas Alves</p>
         <p>Amanda Fragnan</p>
 </div>
 """, unsafe_allow_html=True)
 
 # --- Carregar Modelos de IA
-
 
 @st.cache_resource
 def carregar_modelos_treinados():
