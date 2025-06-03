@@ -326,7 +326,7 @@ Seu Pull Request será revisado pela equipe e, se tudo estiver correto, será ac
   
 - <b>README.md</b>: guia e explicação geral sobre o projeto
 
-## :yt: YouTube VIDEO DEMONSTRATIVO
+##  🎬 VIDEO DEMONSTRATIVO
 
 falta fazer
 
