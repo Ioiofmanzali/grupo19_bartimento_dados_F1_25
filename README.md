@@ -258,12 +258,9 @@ Obs: Para simular um ambiente node sensores captam os dados do ambiente foi util
 </p>       
 
 
-[LINK PARA O PROJETO GLOBAL_SOLUTION_2]( https://wokwi.com/projects/432676821844364289)
-
-## 🔗 LINKS IMPORTANTES
-
-[IBGE](https://sidra.ibge.gov.br/tabela/839)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[INMET](https://portal.inmet.gov.br/dadoshistoricos)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CONAB](https://www.conab.gov.br/info-agro/custos-de-producao/planilhas-de-custo-de-producao/item/16269-serie-historica-custos-milho-2-safra-2005-a-2021)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SATVEG](&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+<p align="center">
+  [LINK PARA O PROJETO GLOBAL_SOLUTION_2](https://wokwi.com/projects/432676821844364289)
+</p>
 
 
 
