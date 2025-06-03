@@ -23,7 +23,7 @@ data_atual = datetime.now()
 
 # Definindo um valor mínimo global para os inputs.
 MIN_CHUVA_INPUT_VALUE = 0.0
-MIN_RIO_INPUT_VALUE = 715.0  # 
+MIN_RIO_INPUT_VALUE = 700.0  # 
 
 try:
     volume_chuva_raw = float(buscar_volume_chuva()['items'][0]['valor'])
