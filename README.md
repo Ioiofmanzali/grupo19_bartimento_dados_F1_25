@@ -43,7 +43,7 @@ Diante desse cenário, torna-se fundamental investir em soluções digitais inov
 
 A aplicação foi desenvolvida para monitoramento de eventos e emissão de alertas para desastre hidrológicos (chuvas intensas, enxurradasm alagamentos e inundações) enviados via SMS (API AWS SNS) somente somente para Gestores Públicos, Defesa Civil, Corpo de Bombeiros e entidades emnvolvidas com a gestão de desastres naturais. Por isso optamos por deixar a aplicação principal somente com as informações necessárias para o nosso objetivo, que é criar uma aplicação com interface em Streamlit, amigável e que permita a visualização dos dados de nvel do rio e chuvas e dispare um alerta via SMS para os números de telefone cadastrados.
 
-Para fins acadêmicos os arquivos relacionados a análise exploratória, treinamento de ML e DL, ESP32 estão disponíveis na pasta docs desse GitHub, porém não são visualizados na aplicação principal do Streamlit.
+Para fins acadêmicos os arquivos relacionados a análise exploratória, treinamento de ML e DL, ESP32 estão disponíveis na pasta 'docs' desse GitHub, porém não são visualizados na aplicação principal do Streamlit.
     
 ### ❗ PRÉ-REQUISITOS 
 
