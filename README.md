@@ -255,7 +255,7 @@ Obs: Para simular um ambiente node sensores captam os dados do ambiente foi util
 
 <p align="center">
   <img src="https://github.com/Ioiofmanzali/GLOBAL_SOLUTION_2_-GRUPO81TIAO/blob/main/assets/dadosfake.JPG" alt="Descrição da Imagem 1" width="48%">
-  <img src="https://github.com/Ioiofmanzali/GLOBAL_SOLUTION_2_-GRUPO81TIAO/blob/main/assets/dadosfake1.JPG)" alt="Descrição da Imagem 2" width="48%">
+  <img src="https://github.com/Ioiofmanzali/GLOBAL_SOLUTION_2_-GRUPO81TIAO/blob/main/assets/dadosfake1.JPG" alt="Descrição da Imagem 2" width="48%">
 </p>       
 
 
