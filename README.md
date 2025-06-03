@@ -229,9 +229,9 @@ Será descrita a seguir a estruturação do código, funcionalidade implementada
 
     Sensor de Temperatura e Umidade (DHT22) conectado no pino 4
 
-    Potenciômetro (simulação de Chuva): Conectado ao pino 34
+    Potenciômetro_1 (simulação de Chuva): Conectado ao pino 34
     
-    Potenciômetro (simulação de Nível do Rio): Conectado ao pino 35
+    Potenciômetro_2 (simulação de Nível do Rio): Conectado ao pino 35
     
   * Requisitos de Software / Bibliotecas
     
