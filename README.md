@@ -40,9 +40,6 @@ A cidade de São Paulo enfrenta, ano após ano, o desafio crescente das enchente
 A topografia acidentada, a impermeabilização do solo e o crescimento acelerado da cidade agravam o risco de transbordamento de rios e córregos, além de potencializar o impacto das enxurradas e enchentes. Mesmo com investimentos em drenagem, monitoramento e sistemas de alerta, São Paulo segue vulnerável a eventos extremos, que causam prejuízos materiais, perdas humanas e demandam respostas rápidas do poder público.
 
 Diante desse cenário, torna-se fundamental investir em soluções digitais inovadoras, capazes de prever, monitorar e mitigar os impactos desses desastres. A análise de dados reais, o uso de inteligência artificial e o cruzamento de informações meteorológicas e ambientais permitem antecipar riscos, emitir alertas e orientar ações preventivas, contribuindo para uma cidade mais resiliente e segura para todos
-
-
-link wokwi: https://wokwi.com/projects/432676821844364289
     
 ### ❗ PRÉ-REQUISITOS 
 
@@ -63,6 +60,8 @@ Maiores informações sobre a instalação e uso dessas linguagens de Programaç
 2. Streamlit: https://docs.streamlit.io/get-started
 
 3. Oracle: https://www.oracle.com.br
+
+4. APEX ORacle: https://apex.oracle.com/pt-br/
 
 ## 🛠️ TECNOLOGIAS UTILIZADAS
 
@@ -134,7 +133,7 @@ A interface do usuário é organizada em diferentes páginas, acessíveis atrav�
 * **Estimativa de Produtividade**: Permite ao usuário inserir parâmetros (localidade, cultura, ano e mês de plantio, área plantada) e obter uma previsão da produtividade utilizando o melhor modelo treinado.
 
 A interface utiliza componentes do Streamlit como st.markdown, st.subheader, st.write, st.dataframe, st.plotly_chart, st.download_button, st.selectbox, st.multiselect, st.number_input, st.button, st.info, st.success, st.warning, st.error, st.expander, st.balloons e st.feedback para criar uma experiência mais  interativa para o usuário.
-
+link wokwi: https://wokwi.com/projects/432676821844364289
 ## DATASETS
 
 Com exceção dos arquivos do INMET, os demais datasets não possuem valores ausentes.
