@@ -235,15 +235,26 @@ Será descrita a seguir a estruturação do código, funcionalidade implementada
     
   * Requisitos de Software / Bibliotecas
     
-    Ambiente de Desenvolvimento Online: Wokwi.com (para edição, simulação e execução do código).
+    Ambiente de Desenvolvimento Online:
 
-  * Bibliotecas:
+    Wokwi.com (para edição, simulação e execução do código).
+
+    Bibliotecas:
+    
     Wire.h: Biblioteca padrão para comunicação I2C.
+    
     LiquidCrystal_I2C.h: Biblioteca para controle de displays LCD via interface I2C.
+
     DHT.h: Biblioteca para leitura de sensores DHT11/DHT22 (suporte à função DHTTYPE).
+
     Adafruit_Sensor.h: Biblioteca genérica para sensores Adafruit (dependência da DHT.h).
 
 [link wokwi]( https://wokwi.com/projects/432676821844364289)
+
+Obs: Para simular um ambiente node sensores captam os dados do ambiente foi utilizado no código sketch.ino uma funcionalidade para gerar dados aleatórios
+
+       
+
 
 
 ## 🔗 LINKS IMPORTANTES
