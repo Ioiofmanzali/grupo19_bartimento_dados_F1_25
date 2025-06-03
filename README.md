@@ -43,7 +43,7 @@ Diante desse cenário, torna-se fundamental investir em soluções digitais inov
 
 A aplicação foi desenvolvida para monitoramento de eventos e emissão de alertas para desastre hidrológicos (chuvas intensas, enxurradasm alagamentos e inundações) enviados via SMS (API AWS SNS) somente somente para Gestores Públicos, Defesa Civil, Corpo de Bombeiros e entidades emnvolvidas com a gestão de desastres naturais. Por isso optamos por deixar a aplicação principal somente com as informações necessárias para o nosso objetivo, que é criar uma aplicação com interface em Streamlit, amigável e que permita a visualização dos dados de nvel do rio e chuvas e dispare um alerta via SMS para os números de telefone cadastrados.
 
-Para fins acadêmicos os arquivos relacionados a análise exploratória, treinamento de ML e DL, ESP32 estão disponíveis no GitHub, porem não são visualizados na aplicação principal do Streamlit.
+Para fins acadêmicos os arquivos relacionados a análise exploratória, treinamento de ML e DL, ESP32 estão disponíveis na pasta docs desse GitHub, porém não são visualizados na aplicação principal do Streamlit.
     
 ### ❗ PRÉ-REQUISITOS 
 
@@ -74,7 +74,8 @@ Maiores informações sobre a instalação e uso dessas linguagens de Programaç
 
 ### 1. ORACLE
 
-* Esse projeto utiliza duas funcionalidades Oeacle:
+* Esse projeto utiliza duas funcionalidades Oracle:
+  
   * API RESTful da Oracle, hospedada na Oracle Cloud, configurada para permitir tratamento de paginação e erros, garantindo que os dados necessários para as funcionalidades do projeto sejam carregados de maneira confiável.
 
   * DB Oracle, para salvar os dados gerados pelo ESP 32, simulando uma situação real de captação de dados por sensores. 
@@ -96,8 +97,8 @@ Se a requisição foi bem-sucedida (código de status 2xx), o corpo da resposta 
   * Tratamento de Erros:
     
 As operações de consumo de API são encapsuladas em blocos try-except.
-  - except requests.exceptions.RequestException as e:: Captura qualquer erro relacionado à requisição HTTP (problemas de rede, timeout, erros de status HTTP capturados por raise_for_status()).
-  - except ValueError:: Captura erros que ocorrem se a resposta da API não for um JSON válido ou se houver problemas na sua decodificação.
+  - except requests.exceptions: Captura qualquer erro relacionado à requisição HTTP (problemas de rede, timeout, erros de status HTTP capturados por raise_for_status()).
+  - except ValueError: Captura erros que ocorrem se a resposta da API não for um JSON válido ou se houver problemas na sua decodificação.
 
   Em ambos os casos de erro, uma mensagem é exibida usando st.error (a aplicação é construída com Streamlit para exibir esses erros na interface do usuário) e a função retorna None, sinalizando que a operação de busca falhou.
 
@@ -202,11 +203,9 @@ falta fazer
 ## 📈 TREINAMENTO E ESCOLHA DO MELHOR MODELO DE ML
 
 TEM QUE FAZER TAMBEM
-O projeto utiliza os modelos com o objetivo de encontrar a combinação que oferece o melhor desempenho de generalização para os dados, ou seja, que consegue fazer previsões precisas em dados não vistos durante o treinamento de regressão supervisionada para prever a produtividade agrícola. 
+O projeto utiliza os modelos com o objetivo de encontrar a combinação que oferece o melhor desempenho de generalização para os dados, ou seja, que consegue fazer as previsões mais precisas em dados não vistos durante o treinamento para prever o risco de enchente. 
 
-Os modelos implementados são:
-
-[![modelos](https://github.com/Ioiofmanzali/Sprint3_FIAP_Grupo09/blob/main/assets/modelos.JPG)]#
+Os modelos implementados são: print do codigo com os modelos
 
 Método selecionado para selecionar o 'melhor modelo' com os 'melhores hiperparâmetros': GridSearchCV
 
