@@ -194,7 +194,7 @@ Resumo geral da arquitetura do programa:
 
 ## SISTEMA DE ALERTA (AWS)
 
-
+![alertaaws]()
 
 
 ## 📊 ANÁLISE EXPLORATÓRIA DOS DADOS
