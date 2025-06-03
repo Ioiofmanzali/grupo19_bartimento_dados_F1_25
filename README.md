@@ -212,18 +212,40 @@ Os dados sao utilizados para treinamento em um ou mais modelos selecionados pelo
 
 ## ESP 32 COM SENSORES
 
-Será descrita a seguir a estruturação do código, funcionalidade implementadas, dependências e hardware e software e parâmetros de configuração.
+**Este projeto não requer hardware físico. Todos os componentes são virtuais e configurados dentro do ambiente de simulação Wokwi.**
+
+Será descrita a seguir a estruturação do código, funcionalidade implementadas, dependências de hardware e software, além dos parâmetros de configuração.
 
 ![image](https://github.com/Ioiofmanzali/GLOBAL_SOLUTION_2_-GRUPO81TIAO/blob/main/assets/esp32.JPG)
 
 
+### Hardware (Simulador Wokwi)
+
+  * Microcontrolador Virtual: ESP32 DevModule Kit C1 (selecionado no Wokwi).
+
+  * Display Virtual: LCD 20x4 com módulo I2C (adicionado ao diagrama do Wokwi).
+
+  * Sensores Virtuais:
+
+    Sensor de Temperatura e Umidade (DHT22) conectado no pino 4
+
+    Potenciômetro (simulação de Chuva): Conectado ao pino 34
+    
+    Potenciômetro (simulação de Nível do Rio): Conectado ao pino 35
+    
+  * Requisitos de Software / Bibliotecas
+    
+    Ambiente de Desenvolvimento Online: Wokwi.com (para edição, simulação e execução do código).
+
+  * Bibliotecas:
+    Wire.h: Biblioteca padrão para comunicação I2C.
+    LiquidCrystal_I2C.h: Biblioteca para controle de displays LCD via interface I2C.
+    DHT.h: Biblioteca para leitura de sensores DHT11/DHT22 (suporte à função DHTTYPE).
+    Adafruit_Sensor.h: Biblioteca genérica para sensores Adafruit (dependência da DHT.h).
+
+[link wokwi]( https://wokwi.com/projects/432676821844364289)
 
 
-
-
-
-
-link wokwi: https://wokwi.com/projects/432676821844364289
 ## 🔗 LINKS IMPORTANTES
 
 [IBGE](https://sidra.ibge.gov.br/tabela/839)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
