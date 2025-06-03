@@ -253,7 +253,10 @@ Será descrita a seguir a estruturação do código, funcionalidade implementada
 
 Obs: Para simular um ambiente node sensores captam os dados do ambiente foi utilizado no código sketch.ino uma funcionalidade para gerar dados aleatórios
 
-       
+<p align="center">
+  <img src="URL_DA_SUA_IMAGEM_1.png" alt="Descrição da Imagem 1" width="48%">
+  <img src="URL_DA_SUA_IMAGEM_2.png" alt="Descrição da Imagem 2" width="48%">
+</p>       
 
 
 
