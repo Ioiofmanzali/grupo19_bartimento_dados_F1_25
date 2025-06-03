@@ -118,7 +118,7 @@ A interface mostra os níveis atual, esperado e previsto do rio e a classificaç
 
 Na aba lateral, podemos determinar o nivel de agua (grave e moderado) e tambem simular situações com valores atribuidos de nivel do rio e chuvas. 
 
-## DATASETS
+## 📚 DATASETS
 
 ### INMET
 
@@ -191,12 +191,19 @@ Resumo geral da arquitetura do programa:
 | `treinar_modelos.py` | **Treinamento de Modelos de ML:** Script dedicado ao ciclo de vida dos modelos preditivos. É responsável por carregar os datasets brutos, realizar o pré-processamento de dados, treinar os modelos de machine learning para previsão de chuva e nível esperado, serializá-los e salvá-los no formato `.joblib`.                                                                                                                                                                                                                                                                                 |
 | `utils.py`         | **Utilitário e Lógica de Negócio Central:** Contém funções auxiliares e a lógica de negócio crítica do sistema. Inclui as chamadas às APIs de terceiros (Oracle Cloud para dados de sensores e AWS Lambda para alertas SMS), incorpora a lógica de avaliação de risco de enchente (realizando cálculos e classificações), interage com o banco de dados Oracle para salvar leituras adicionais de sensores e garante o disparo automático de alertas SMS quando as condições de risco atingem limiares predefinidos. |
 
+
+## SISTEMA DE ALERTA (AWS)
+
+
+
+
 ## 📊 ANÁLISE EXPLORATÓRIA DOS DADOS
 
 falta fazer
 
 ## 📈 TREINAMENTO E ESCOLHA DO MELHOR MODELO DE ML
 
+TEM QUE FAZER TAMBEM
 O projeto utiliza os modelos com o objetivo de encontrar a combinação que oferece o melhor desempenho de generalização para os dados, ou seja, que consegue fazer previsões precisas em dados não vistos durante o treinamento de regressão supervisionada para prever a produtividade agrícola. 
 
 Os modelos implementados são:
@@ -210,7 +217,7 @@ Métrica utilizada para seleção do modelo: RMSE
 Os dados sao utilizados para treinamento em um ou mais modelos selecionados pelo usuário, seus resultados são comparados e o "melhor modelo" com os "melhores parâmetros" é selecionado com base no menor RMSE, apos otimização dos hiperparâmetros utilizando o GridSearchCV.
 
 
-## ESP 32 COM SENSORES
+## 🌧️ ESP 32 COM SENSORES
 
 **Este projeto não requer hardware físico. Todos os componentes são virtuais e configurados dentro do ambiente de simulação Wokwi.**
 
@@ -258,20 +265,34 @@ Obs: Para simular um ambiente node sensores captam os dados do ambiente foi util
 </p>       
 
 
-<p align="center">
-  [LINK PARA O PROJETO GLOBAL_SOLUTION_2](https://wokwi.com/projects/432676821844364289)
-</p>
-
+[LINK PARA O PROJETO GLOBAL_SOLUTION_2](https://wokwi.com/projects/432676821844364289)
 
 
 ## 📣 PRÓXIMOS PASSOS
 
-Este é um projeto em evolução. Na sua versão 1.0.0 foi selecionada a cultura de milho da cidade de  Sorriso, localizada no estado do Mato Grosso.
+Este projeto foi desenvolvido com um protótipo funcional que demonstra o potencial de um sistema de monitoramento de enchentes, utilizando dados simulados ou de teste para suas validações.
+Acreditamos que esse é o começo de uma idéia com grande potencial  e com impacto real.
 
-Para a versão 2.0.0, expandimos o escopo para incluir outras culturas e municípios do território nacional.
+   * Coleta e Integração de Dados Reais e Contínuo
+     
+   * Parcerias com Órgãos Governamentais para acesso aos dados de todas as estações de monitoramento
 
-O programa foi construido para ser escalável e para novas versões esperamos acrescentar dados relacionados a tipo de clima e solo, a partir de coordenadas geográficas.
-            
+   * Integraççao de outras fontes de dados que possam influenciar enchentes (temperatura, umidade, vazão, etc.)
+
+   * Aprimoramento dos Modelos de Machine Learning com dados reais e datasets mais robustos
+
+   * Re-treinamento contínuo dos modelos com os novos dados coletados, garantindo que eles se adaptem a padrões sazonais e mudanças ambientais.
+
+   *  Explorar e criar novas features a partir dos dados existentes
+   
+   *  Dashboards mais complexos com múltiplos painéis
+   
+   * Implementação de Alertas e Notificações personalizados e por múltiplos canais
+
+   * Lógica de disparo otimizada de alertas para evitar "falsos positivos" ou o envio excessivo de mensagens, considerando a duração do risco e a severidade.
+
+   * Deployment e Infraestrutura que permita que o projeto funcione 24/7 e atenda a usuários reais
+
 
 ## :octocat: CONTRIBUIÇÕES AO PROJETO
 
