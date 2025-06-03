@@ -41,10 +41,9 @@ A topografia acidentada, a impermeabilização do solo e o crescimento acelerado
 
 Diante desse cenário, torna-se fundamental investir em soluções digitais inovadoras, capazes de prever, monitorar e mitigar os impactos desses desastres. A análise de dados reais, o uso de inteligência artificial e o cruzamento de informações meteorológicas e ambientais permitem antecipar riscos, emitir alertas e orientar ações preventivas, contribuindo para uma cidade mais resiliente e segura para todos.
 
-Para fins acadêmicos os arquivos relacionados a análise exploratória, treinamento de ML e DL, ESP32 estão disponíveis no GitHub, porem ão são visualizados na aplicação principal do Streamlit.
+A aplicação foi desenvolvida para monitoramento de eventos e emissão de alertas para desastre hidrológicos (chuvas intensas, enxurradasm alagamentos e inundações) enviados via SMS (API AWS SNS) somente somente para Gestores Públicos, Defesa Civil, Corpo de Bombeiros e entidades emnvolvidas com a gestão de desastres naturais. Por isso optamos por deixar a aplicação principal somente com as informações necessárias para o nosso objetivo, que é criar uma aplicação com interface em Streamlit, amigável e que permita a visualização dos dados de nvel do rio e chuvas e dispare um alerta via SMS para os números de telefone cadastrados.
 
-Optamos por deixar a aplicação principal somente com as informações necessárias para o nosso objetivo, que é criar uma aplicação com interface em Streamlit, amigável e que permita a visualização dos dados de nvel do rio e chuvas e dispare um alerta via SMS para os numeros de telefone cadastrados.
-
+Para fins acadêmicos os arquivos relacionados a análise exploratória, treinamento de ML e DL, ESP32 estão disponíveis no GitHub, porem não são visualizados na aplicação principal do Streamlit.
     
 ### ❗ PRÉ-REQUISITOS 
 
@@ -109,52 +108,25 @@ As operações de consumo de API são encapsuladas em blocos try-except.
 
 ### 3. STREAMLIT
 
-A interface do usuário é organizada em uma única página principal, com :
+A interface do usuário é organizada em uma única página principal.
 
 ![pagina_inicial](https://github.com/Ioiofmanzali/GLOBAL_SOLUTION_2_-GRUPO81TIAO/blob/main/assets/app_pp.JPG))
 
-* **Sobre o Projeto**: Fornece informações contextuais sobre o projeto, o time de desenvolvimento e os planos futuros.
+A interface mostra os nivel , esperado e previsto do rio e a classificação do risco de enchente.
 
-* **Links Importantes**: Contém os links relevantes do projeto.
+Na aba lateral, podemos determinar o nivel de agua (grave e moderado) e tambem simular situações com valores atribuidos de nivel do rio e chuvas. 
 
-* **Carga de Dados**: Usado para fazer upload de dados em formato CSV para o banco de dados Oracle para ser usado via Rest API no treinamento dos modelos de IA.
-
-* **Análise Exploratória**: Permite visualizar os dados carregados da API Oracle, realizar uma análise básica de limpeza e visualizar séries históricas através de gráficos interativos. Também oferece a opção de baixar os dados em formato CSV.
-
-* **Treinamento de Modelos**: Permite ao usuário selecionar e treinar diferentes modelos de regressão supervisionada utilizando os dados de produtividade. Exibe os resultados do treinamento e salva os modelos treinados.
-
-* **Estimativa de Produtividade**: Permite ao usuário inserir parâmetros (localidade, cultura, ano e mês de plantio, área plantada) e obter uma previsão da produtividade utilizando o melhor modelo treinado.
-
-A interface utiliza componentes do Streamlit como st.markdown, st.subheader, st.write, st.dataframe, st.plotly_chart, st.download_button, st.selectbox, st.multiselect, st.number_input, st.button, st.info, st.success, st.warning, st.error, st.expander, st.balloons e st.feedback para criar uma experiência mais  interativa para o usuário.
-link wokwi: https://wokwi.com/projects/432676821844364289
 ## DATASETS
-
-Com exceção dos arquivos do INMET, os demais datasets não possuem valores ausentes.
 
 ### INMET
 
 Os datasets IMNET foram processados conforme o descrito a seguir:
-  - Preenchimento de valores ausentes: Valores ausentes, representados por '-9999', '-9999.0', 'NA' ou '', substituídos pela média temporal da mesma hora e dia de outros anos. 
-  - Repetição do código WMO (código especifico da estação metereolólgica) em todas as linhas, garantindo a uniformidade dessa informação.
-  - Salvamento dos arquivos processados sem sobrescreve os originais
+  - Preenchimento de valores ausentes: a maioria dos valores ausentes do dataset INMET está na coluna de radiacao global, que nao foi utilizada para esse projeto. Para os campos precipitacao_total não foram encontrados valores ausentes ou duplicados.
 
-### NDVI
 
-  - selecionados talhões aleatórios dos municipios de  Barreiras, Brasilia, Caçador, Cruz Alta, Dois Vizinhos, Dourados, Guanambi, Passo Fundo, Pedro Afonso, Rio Verde e Sorriso.
-    
-Os criterios selecionados no site Satveg:
 
- * Índice: NDVI
-    
- * Satélite: Terra e Aqua
-    
- * QA: Marginal / Nuvem / Neve
-    
- * Pré-filtragem: NoData / Nuvem
-    
- * Filtros: SG4
-    
- Obs: o QA neve foi selecionado para os estados da região Sul do Brasil.
+
+link wokwi: https://wokwi.com/projects/432676821844364289
 
 ## ➡️ ARQUITETURA DO PROGRAMA
 
