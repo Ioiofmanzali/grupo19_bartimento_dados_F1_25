@@ -180,27 +180,16 @@ O sistema é construído em Python e utiliza diversas bibliotecas para diferente
 
 Resumo geral da arquitetura do programa:
 
-**app.py** 
+## Componentes da Arquitetura do Projeto `GS2_OFICIAL`
 
-É a interface que permite a interação com as previsões ou análises geradas pelos modelos.
-
-**main.py**
-
-Script para executar lógica do ESP 32 com integraçao ao vanco de dados via API Oracle.
-
-**oracle.sql**
-
-Contem os scripts para criação das tabelas de nivel de agua e nivel de chuva
-
-**requirements.txt**
-
-Lista as bibliotecas e suas versões específicas das quais o projeto depende. 
-
-**treinar_modelos.py**
-
-Script responsável por carregar os dados dos datasets, pré-processá-los, treinar os modelos de machine learning e salvá-los no formato .joblib.
-
-**utils.py**
+| Arquivo/Pasta      | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| :----------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `app.py`           | **Interface de Usuário (Frontend):** Responsável por prover a interface interativa (provavelmente via Streamlit) que permite aos usuários visualizar as previsões, análises e o status geral do sistema. É o ponto de interação visual com as informações geradas pelos modelos e dados coletados.                                                                                                                                                                                                                                                                                                                                                                    |
+| `main.py`          | **Lógica do ESP32 e Integração com Banco de Dados (Backend IoT):** Script principal para a execução da lógica de comunicação com dispositivos IoT (como o ESP32). Sua função central é coletar dados desses dispositivos e integrá-los ao banco de dados Oracle via chamadas de API, atuando como o ponto de entrada para a ingestão de dados brutos do hardware.                                                                                                                                                                                                                                                                                          |
+| `oracle.sql`       | **Scripts de Banco de Dados:** Contém os comandos SQL necessários para a criação das tabelas no banco de dados Oracle, especificamente para armazenar dados de nível de água e volume de chuva. É crucial para a estrutura e persistência dos dados coletados pelo sistema.                                                                                                                                                                                                                                                                                                                                                                                          |
+| `requirements.txt` | **Gerenciamento de Dependências:** Lista todas as bibliotecas Python de terceiros e suas respectivas versões das quais o projeto depende. Garante a reprodutibilidade do ambiente de desenvolvimento, facilitando a instalação de todas as dependências necessárias (`pip install -r requirements.txt`).                                                                                                                                                                                                                                                                                                                                                                  |
+| `treinar_modelos.py` | **Treinamento de Modelos de Machine Learning:** Script dedicado ao ciclo de vida dos modelos preditivos. É responsável por carregar os datasets brutos, realizar o pré-processamento de dados, treinar os modelos de machine learning (ex: para previsão de chuva e nível esperado) e, subsequentemente, serializá-los e salvá-los no formato `.joblib` para uso posterior pela aplicação.                                                                                                                                                                                                                                                                                 |
+| `utils.py`         | **Serviços de Utilitário e Lógica de Negócio Central:** Contém funções auxiliares e a lógica de negócio crítica do sistema. Inclui as chamadas às APIs de terceiros (Oracle Cloud para dados de sensores e AWS Lambda para alertas SMS), incorpora a lógica de avaliação de risco de enchente (realizando cálculos e classificações), interage com o banco de dados Oracle para salvar leituras adicionais de sensores e garante o disparo automático de alertas SMS quando as condições de risco atingem limiares predefinidos. |
 
 Script responsável pelas seguintes funcionalidades: 
   * chamadas às APIs de terceiros (Oracle Cloud nivel_agua, volume_chuva, leituras e AWS Lambda alertaEnchente)
