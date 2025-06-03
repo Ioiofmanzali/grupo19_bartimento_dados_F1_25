@@ -326,6 +326,8 @@ Seu Pull Request será revisado pela equipe e, se tudo estiver correto, será ac
 ## 📁 Estrutura de pastas
 
 - <b>assets</b>: imagens utilizadas no projeto e documentação
+
+- - <b>docs</b>: códigos auxiliares utilizadas no projeto
   
 - <b>src</b>: códigos principais do programa
   
@@ -333,8 +335,7 @@ Seu Pull Request será revisado pela equipe e, se tudo estiver correto, será ac
 
 ## 🗃 Histórico de lançamentos
 
-* 2.0.0 - 26/05/2025
-* 1.0.0 - 18/04/2025
+* 1.0.0 - 03/06/2025
     
 
 ## 📋 Licença
