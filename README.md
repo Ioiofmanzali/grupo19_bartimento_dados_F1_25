@@ -193,7 +193,7 @@ Resumo geral da arquitetura do programa:
 
 ## 📊 ANÁLISE EXPLORATÓRIA DOS DADOS
 
-A análise exploratoria teve como objetivo a avaliação da qualidade dos dados, informando as decisões subsequentes de pré-processamento e engenharia de features para otimizar o desempenho dos modelos de Machine Learning.
+falta fazer
 
 ## 📈 TREINAMENTO E ESCOLHA DO MELHOR MODELO DE ML
 
@@ -209,22 +209,25 @@ Métrica utilizada para seleção do modelo: RMSE
 
 Os dados sao utilizados para treinamento em um ou mais modelos selecionados pelo usuário, seus resultados são comparados e o "melhor modelo" com os "melhores parâmetros" é selecionado com base no menor RMSE, apos otimização dos hiperparâmetros utilizando o GridSearchCV.
 
-![train](https://github.com/Ioiofmanzali/Sprint3_FIAP_Grupo09/blob/main/assets/aed.JPG)
 
-## 💹 ESTIMATIVA DE PRODUTIVIDADE
+## ESP 32 COM SENSORES
 
-Para esta previsão, o melhor modelo modelo treinado com os dados históricos e os melhores hiperparâmetros ajustados (GradientBoosting com RMSE de 1995.68).
+Será descrita a seguir a estruturação do código, funcionalidade implementadas, dependências e hardware e software e parâmetros de configuração.
 
-A saída deste processo consistiu em estimativas quantitativas da produtividade para um horizonte temporal futuro específico (5 anos), fornecendo insights cruciais para o planejamento estratégico e a tomada de decisões proativas dentro do cenário do desafio. A acurácia dessas previsões está intrinsecamente ligada à qualidade dos dados futuros utilizados e à capacidade do modelo de generalizar padrões aprendidos no passado para novas situações.
 
-![prod](https://github.com/Ioiofmanzali/Sprint3_FIAP_Grupo09/blob/main/assets/prod.JPG))
 
+
+
+
+
+
+link wokwi: https://wokwi.com/projects/432676821844364289
 ## 🔗 LINKS IMPORTANTES
 
 [IBGE](https://sidra.ibge.gov.br/tabela/839)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 [INMET](https://portal.inmet.gov.br/dadoshistoricos)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CONAB](https://www.conab.gov.br/info-agro/custos-de-producao/planilhas-de-custo-de-producao/item/16269-serie-historica-custos-milho-2-safra-2005-a-2021)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SATVEG](&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
 
-link wokwi: https://wokwi.com/projects/432676821844364289
+
 
 ## 📣 PRÓXIMOS PASSOS
 
