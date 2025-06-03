@@ -31,7 +31,7 @@ Documentação Técnica do Projeto "GLOBAL SOLUTION - 2o SEMESTRE"
 
 ![Versão 1.0.0](https://img.shields.io/badge/Vers%C3%A3o%201.0.0-gray?style=flat) 
 
-Autores: Jonatas Gomes, Iolanda Manzali, Murilo Nasser, Pedro Sousa, Amanda Fragnan
+Autores: Amanda Fragnan, Iolanda Manzali, Jonatas Gomes, Murilo Nasser, Pedro Sousa 
 
 ## 🔍 SOBRE O PROJETO
 
@@ -39,7 +39,12 @@ A cidade de São Paulo enfrenta, ano após ano, o desafio crescente das enchente
 
 A topografia acidentada, a impermeabilização do solo e o crescimento acelerado da cidade agravam o risco de transbordamento de rios e córregos, além de potencializar o impacto das enxurradas e enchentes. Mesmo com investimentos em drenagem, monitoramento e sistemas de alerta, São Paulo segue vulnerável a eventos extremos, que causam prejuízos materiais, perdas humanas e demandam respostas rápidas do poder público.
 
-Diante desse cenário, torna-se fundamental investir em soluções digitais inovadoras, capazes de prever, monitorar e mitigar os impactos desses desastres. A análise de dados reais, o uso de inteligência artificial e o cruzamento de informações meteorológicas e ambientais permitem antecipar riscos, emitir alertas e orientar ações preventivas, contribuindo para uma cidade mais resiliente e segura para todos
+Diante desse cenário, torna-se fundamental investir em soluções digitais inovadoras, capazes de prever, monitorar e mitigar os impactos desses desastres. A análise de dados reais, o uso de inteligência artificial e o cruzamento de informações meteorológicas e ambientais permitem antecipar riscos, emitir alertas e orientar ações preventivas, contribuindo para uma cidade mais resiliente e segura para todos.
+
+Para fins acadêmicos os arquivos relacionados a análise exploratória, treinamento de ML e DL, ESP32 estão disponíveis no GitHub, porem ão são visualizados na aplicação principal do Streamlit.
+
+Optamos por deixar a aplicação principal somente com as informações necessárias para o nosso objetivo, que é criar uma aplicação com interface em Streamlit, amigável e que permita a visualização dos dados de nvel do rio e chuvas e dispare um alerta via SMS para os numeros de telefone cadastrados.
+
     
 ### ❗ PRÉ-REQUISITOS 
 
@@ -68,19 +73,12 @@ Maiores informações sobre a instalação e uso dessas linguagens de Programaç
 
 ![Streamlit](https://img.shields.io/badge/Streamlit-%23FE4B4B.svg?style=for-the-badge&logo=streamlit&logoColor=white) &nbsp; ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) &nbsp; ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=Oracle&logoColor=white) ![Oracle APEX](https://img.shields.io/badge/Oracle%20APEX-green?style=for-the-badge&logo=oracle&logoColor=white)
 
-
-
-
-
-
-
 ### 1. ORACLE
 
-* Esse projeto utiliza uma API RESTful da Oracle, hospedada na Oracle Cloud, como fonte primária de dados.
-  
-* A API Oracle foi configurada para permitir tratamento de paginação e erros, garantindo que os dados necessários para as funcionalidades do projeto sejam carregados de maneira confiável.
+* Esse projeto utiliza duas funcionalidades Oeacle:
+  * API RESTful da Oracle, hospedada na Oracle Cloud, configurada para permitir tratamento de paginação e erros, garantindo que os dados necessários para as funcionalidades do projeto sejam carregados de maneira confiável.
 
-* Os dados podem ser carregados utilizando-se arquivos .csv ou .txt, via APEX ORACLE
+  * DB Oracle, para salvar os dados gerados pelo ESP 32, simulando uma situação real de captação de dados por sensores. 
 
 ### Mecanismo de Consumo da API
 
