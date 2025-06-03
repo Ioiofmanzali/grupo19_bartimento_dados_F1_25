@@ -194,7 +194,7 @@ Resumo geral da arquitetura do programa:
 
 ## SISTEMA DE ALERTA (AWS)
 
-![alertaaws]()
+![alertaaws](https://github.com/Ioiofmanzali/GLOBAL_SOLUTION_2_-GRUPO81TIAO/blob/main/assets/alertaaws.JPG)
 
 
 ## 📊 ANÁLISE EXPLORATÓRIA DOS DADOS
