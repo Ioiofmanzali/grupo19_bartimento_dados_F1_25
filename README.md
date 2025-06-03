@@ -220,7 +220,7 @@ Os dados sao utilizados para treinamento em um ou mais modelos selecionados pelo
 
 Será descrita a seguir a estruturação do código, funcionalidade implementadas, dependências de hardware e software, além dos parâmetros de configuração.
 
-![image](https://github.com/Ioiofmanzali/GLOBAL_SOLUTION_2_-GRUPO81TIAO/blob/main/assets/esp32.JPG)
+![image](https://github.com/Ioiofmanzali/GLOBAL_SOLUTION_2_-GRUPO81TIAO/blob/main/assets/esp_32.JPG)
 
 
 ### Hardware (Simulador Wokwi)
