@@ -80,47 +80,36 @@ Maiores informações sobre a instalação e uso dessas linguagens de Programaç
 
   * DB Oracle, para salvar os dados gerados pelo ESP 32, simulando uma situação real de captação de dados por sensores. 
 
-### Mecanismo de Consumo da API
+### API ORACLE
 
-* Definição de Endpoints a partir de uma url_base constante
+  * Requisição HTTP GET:
+    
+Quando buscar_nivel_rio() ou buscar_volume_chuva() são chamadas, elas executam uma operação requests.get(). Isso instrui o programa a enviar uma requisição HTTP GET para a URL especificada (API_NIVEL_AGUA ou API_VOLUME_CHUVA) em um tempo limite de 5 segundos para a requisição. Se o servidor não responder dentro desse período, uma exceção será levantada.
 
-* Requisição HTTP GET é enviada para o endpoint definido utilizando requests.get com resposta armazenada no formato json
+  * Recebimento da Resposta HTTP:
+    
+O servidor da API processa a requisição GET e, se tudo estiver correto, envia de volta uma resposta HTTP. Essa resposta contém um código de status (ex: 200 OK, 404 Not Found, 500 Internal Server Error) e o corpo da resposta. Isso garante que o programa não tente processar dados de uma requisição que falhou, tornando o tratamento de erros mais robusto.
 
-* Tratamento da Resposta: se a requisição for bem-sucedida, a resposta é convertida para JSON utilizando response.json(). Os dados relevantes são extraídos do campo "items" da resposta JSON e adicionados a uma lista chamada all_items.
+  * Decodificação JSON (response.json()):
+    
+Se a requisição foi bem-sucedida (código de status 2xx), o corpo da resposta é esperado que esteja no formato JSON (JavaScript Object Notation). A linha data = response.json() é responsável por parsear a string JSON recebida no corpo da resposta HTTP e convertê-la em um objeto Python em um formato específico - {'data_leitura': 'YYYY-MM-DDTHH:MM:SS', 'valor': X.Y} - que será transformado em um dicionário Python com as chaves 'data_leitura' e 'valor'.
 
-### Tratamento de Erros e Dados Ausentes
+  * Tratamento de Erros:
+As operações de consumo de API são encapsuladas em blocos try-except.
+  - except requests.exceptions.RequestException as e:: Captura qualquer erro relacionado à requisição HTTP (problemas de rede, timeout, erros de status HTTP capturados por raise_for_status()).
+  - except ValueError:: Captura erros que ocorrem se a resposta da API não for um JSON válido ou se houver problemas na sua decodificação.
 
-* o código verifica se a resposta JSON contém a chave "hasMore" e, caso seja True, tenta encontrar o link para a próxima página na seção "links" com a relação "next". Se um link "next" for encontrado, o endpoint é atualizado com este novo link e o processo de requisição é repetido até que "hasMore" seja False ou não haja um link "next" disponível.
-
-* o código inclui tratamento de exceções para lidar com possíveis erros durante a requisição, na decodificação ou na ausência de chaves esperadas no JSON. Em caso de erro, uma mensagem é exibida no Streamlit e um DataFrame vazio é retornado.
-
-* Após a tentativa de carregamento, o código verifica se all_items está vazio e exibe um aviso caso nenhum dado tenha sido retornado para o tipo solicitado.
-
-* Retorno dos Dados: os dados coletados em all_items são convertidos para um DataFrame do pandas
- 
-### Funções de Carregamento Específicas:
-
-* o código também define funções específicas para carregar cada tipo de dado como:
-   - carregar_dados_produtividade()
-   - carregar_dados_meteorologicos()
-   - carregar_dados_custos()
-   - carregar_dados_ndvi()
-   
-* estas funções chamam a função genérica 'carregar_dados_oracle()' com o tipo de dado correspondente e utilizam o decorador '@st.cache_data' do Streamlit para armazenar em cache os resultados, evitando chamadas desnecessárias à API em cada interação do usuário.
-  
-* a função 'carregar_dados_ndvi()' também realiza uma conversão da coluna 'data' para o tipo datetime do pandas.
+  Em ambos os casos de erro, uma mensagem é exibida usando st.error (a aplicação é construída com Streamlit para exibir esses erros na interface do usuário) e a função retorna None, sinalizando que a operação de busca falhou.
 
 ### 2. PYTHON
 
-* Atua como a linguagem principal para definir a arquitetura da aplicação web, organizando o conteúdo em múltiplas páginas acessíveis através de botões de navegação no menu principal.
+* Atua como a linguagem principal para definir a arquitetura da aplicação web, organizando o conteúdo através de botões de navegação no menu principal.
 
 ** maiores detalhes na seção Arquitetura do Programa
 
 ### 3. STREAMLIT
 
-* Simplifica o desenvolvimento da UI, permitindo que o código Python renderize de forma dinâmica os componentes interativos, visualize os resultados da análise (incluindo as previsões baseadas no NDVI) e facilite a interação do usuário com as funcionalidades do programa de forma mais amigável.
-
-A interface do usuário é organizada em diferentes páginas, acessíveis através de botões no menu principal:
+A interface do usuário é organizada em uma única página principal, com :
 
 ![pagina_inicial](assets/app_inicio.png)
 
