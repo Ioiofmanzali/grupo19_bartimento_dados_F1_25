@@ -111,7 +111,7 @@ As operações de consumo de API são encapsuladas em blocos try-except.
 
 A interface do usuário é organizada em uma única página principal, com :
 
-![pagina_inicial](assets/app_inicio.png)
+![pagina_inicial](https://github.com/Ioiofmanzali/GLOBAL_SOLUTION_2_-GRUPO81TIAO/blob/main/assets/app_pp.JPG))
 
 * **Sobre o Projeto**: Fornece informações contextuais sobre o projeto, o time de desenvolvimento e os planos futuros.
 
