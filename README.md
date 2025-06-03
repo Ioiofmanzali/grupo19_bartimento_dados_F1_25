@@ -214,6 +214,8 @@ Os dados sao utilizados para treinamento em um ou mais modelos selecionados pelo
 
 Será descrita a seguir a estruturação do código, funcionalidade implementadas, dependências e hardware e software e parâmetros de configuração.
 
+"![esp32](![image](https://github.com/user-attachments/assets/c9183d00-71d5-410f-805a-bd9faa480652)
+
 
 
 
