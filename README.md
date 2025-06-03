@@ -123,7 +123,44 @@ Na aba lateral, podemos determinar o nivel de agua (grave e moderado) e tambem s
 Os datasets IMNET foram processados conforme o descrito a seguir:
   - Preenchimento de valores ausentes: a maioria dos valores ausentes do dataset INMET está na coluna de radiacao global, que nao foi utilizada para esse projeto. Para os campos precipitacao_total não foram encontrados valores ausentes ou duplicados.
 
+### S2iD (Sistema Integrado de Informações sobre Desastres)
 
+O dataset  S2iD foi processado condorme o descrito a seguir:
+  - feito o download da série histórica. Foram filtrados somente os desastres do tipo hidrológico (enxurradas, alagamentos, chuvas intensas, movimento de massa e inundações) para a cidade de São Paulo.
+  - selecionadas as colunas mais significativas para uso no projeto para o treinamento de  ML/DL:
+    * DATA_EVENTO
+    * TIPO_EVENTO
+    * ÓBITOS
+    * FERIDOS 
+    * ENFERMOS
+    * DESABRIGADOS
+    * DESALOJADOS
+    * DESAPARECIDOS
+    * RESIDENCIAS_DANIFICADAS
+    * RESIDENCIAS_DESTRUIDAS
+    * DANO_PATRIMONIO_PL
+
+  ** Obs: todos os parâmetros acima estão estritamente relacionados aos desastres naturais.
+  ** Conceitos importantes:
+
+  Óbitos: Número de pessoas que morreram em decorrência do evento.
+
+Feridos: Pessoas que sofreram lesões físicas e necessitam de atendimento médico.
+
+Enfermos: Indivíduos que desenvolveram doenças ou tiveram sua saúde agravada por causa do evento.
+
+Desabrigados: Pessoas que perderam suas casas e não têm onde morar, precisando de abrigo temporário (geralmente em abrigos públicos).
+
+Desalojados: Indivíduos que foram forçados a sair de suas casas temporariamente, mas podem retornar a elas após a situação se normalizar, ou que buscaram refúgio em casas de parentes/amigos.
+
+Desaparecidos: Pessoas cujo paradeiro é desconhecido após o evento e há preocupação com sua segurança ou vida.
+
+Residências Danificadas: Casas que sofreram algum tipo de estrago estrutural ou material, mas que podem ser reparadas e habitadas novamente.
+
+Residências Destruídas: Casas que foram completamente arrasadas ou danificadas de forma irreparável, tornando-as inabitáveis.
+
+Dano Patrimônio Público: Prejuízos causados a bens e infraestruturas de propriedade do governo, como escolas, hospitais, estradas, pontes, etc.
+  
 
 
 link wokwi: https://wokwi.com/projects/432676821844364289
