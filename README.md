@@ -202,16 +202,15 @@ falta fazer
 
 ## 📈 TREINAMENTO E ESCOLHA DO MELHOR MODELO DE ML
 
-TEM QUE FAZER TAMBEM
 O projeto utiliza os modelos com o objetivo de encontrar a combinação que oferece o melhor desempenho de generalização para os dados, ou seja, que consegue fazer as previsões mais precisas em dados não vistos durante o treinamento para prever o risco de enchente. 
 
 Os modelos implementados são: print do codigo com os modelos
 
 Método selecionado para selecionar o 'melhor modelo' com os 'melhores hiperparâmetros': GridSearchCV
 
-Métrica utilizada para seleção do modelo: RMSE
+Métrica utilizada para seleção do modelo: xxxxxx
 
-Os dados sao utilizados para treinamento em um ou mais modelos selecionados pelo usuário, seus resultados são comparados e o "melhor modelo" com os "melhores parâmetros" é selecionado com base no menor RMSE, apos otimização dos hiperparâmetros utilizando o GridSearchCV.
+Oos modelos para nivel de chuva e nivel de rio são salvos em .joblib e utilizados no app.py para previsão por IA.
 
 
 ## 🌧️ ESP 32 COM SENSORES
@@ -290,7 +289,6 @@ Acreditamos que esse é o começo de uma idéia com grande potencial  e com impa
 
    * Deployment e Infraestrutura que permita que o projeto funcione 24/7 e atenda a usuários reais
 
-
 ## :octocat: CONTRIBUIÇÕES AO PROJETO
 
 Ficamos muito felizes com a sua contribuição e valorizamos cada sugestão e esforço dedicado a aprimorá-lo.
@@ -312,15 +310,13 @@ Seu Pull Request será revisado pela equipe e, se tudo estiver correto, será ac
 1. Abrir o Terminal no VS Code
      No menu superior, clique em Terminal e depois em Novo Terminal ou utilize o atalho "CTRL J". Isso abrirá um painel de terminal na parte inferior da janela do VS Code.
      
-2. No terminal digite os comandos cd e run para abrir o arquico e, em seguida, o navegador onde o aplicativo será aberto:
+2. No terminal digite os comandos cd e run para abrir o arquivo e, em seguida, o navegador onde o aplicativo será aberto:
  
  ** após executar o comando streamlit run app.py, o Streamlit irá iniciar um servidor local e abrir automaticamente o seu aplicativo em uma nova aba do seu navegador web padrão.
  
  ** também aparecerá no terminal o endereço local onde o aplicativo está rodando (pode copiar e colar esse endereço no seu navegador, caso ele não abra automaticamente).
 
-
-
-## 📁 Estrutura de pastas
+## 📁 ESTRUTURA DE PASTAS
 
 - <b>assets</b>: imagens utilizadas no projeto e documentação
 
@@ -330,7 +326,11 @@ Seu Pull Request será revisado pela equipe e, se tudo estiver correto, será ac
   
 - <b>README.md</b>: guia e explicação geral sobre o projeto
 
-## 🗃 Histórico de lançamentos
+## :yt: YouTube VIDEO DEMONSTRATIVO
+
+falta fazer
+
+## 🗃 HISTÓRICO DE LANÇAMENTOS
 
 * 1.0.0 - 03/06/2025
     
