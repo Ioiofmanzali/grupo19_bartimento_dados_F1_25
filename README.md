@@ -249,7 +249,6 @@ Será descrita a seguir a estruturação do código, funcionalidade implementada
 
     Adafruit_Sensor.h: Biblioteca genérica para sensores Adafruit (dependência da DHT.h).
 
-[CONHEÇA O PROJETO NA INTEGRA]( https://wokwi.com/projects/432676821844364289)
 
 Obs: Para simular um ambiente node sensores captam os dados do ambiente foi utilizado no código sketch.ino uma funcionalidade para gerar dados aleatórios
 
@@ -259,6 +258,7 @@ Obs: Para simular um ambiente node sensores captam os dados do ambiente foi util
 </p>       
 
 
+[LINK PARA O PROJETO GLOBAL_SOLUTION_2]( https://wokwi.com/projects/432676821844364289)
 
 ## 🔗 LINKS IMPORTANTES
 
