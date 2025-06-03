@@ -94,6 +94,7 @@ O servidor da API processa a requisição GET e, se tudo estiver correto, envia 
 Se a requisição foi bem-sucedida (código de status 2xx), o corpo da resposta é esperado que esteja no formato JSON (JavaScript Object Notation). A linha data = response.json() é responsável por parsear a string JSON recebida no corpo da resposta HTTP e convertê-la em um objeto Python em um formato específico - {'data_leitura': 'YYYY-MM-DDTHH:MM:SS', 'valor': X.Y} - que será transformado em um dicionário Python com as chaves 'data_leitura' e 'valor'.
 
   * Tratamento de Erros:
+    
 As operações de consumo de API são encapsuladas em blocos try-except.
   - except requests.exceptions.RequestException as e:: Captura qualquer erro relacionado à requisição HTTP (problemas de rede, timeout, erros de status HTTP capturados por raise_for_status()).
   - except ValueError:: Captura erros que ocorrem se a resposta da API não for um JSON válido ou se houver problemas na sua decodificação.
@@ -110,9 +111,10 @@ As operações de consumo de API são encapsuladas em blocos try-except.
 
 A interface do usuário é organizada em uma única página principal.
 
-![pagina_inicial](https://github.com/Ioiofmanzali/GLOBAL_SOLUTION_2_-GRUPO81TIAO/blob/main/assets/app_pp.JPG))
+![pagina_inicial](https://github.com/Ioiofmanzali/GLOBAL_SOLUTION_2_-GRUPO81TIAO/blob/main/assets/app_pp.JPG)
 
-A interface mostra os nivel , esperado e previsto do rio e a classificação do risco de enchente.
+
+A interface mostra os níveis atual, esperado e previsto do rio e a classificação do risco de enchente.
 
 Na aba lateral, podemos determinar o nivel de agua (grave e moderado) e tambem simular situações com valores atribuidos de nivel do rio e chuvas. 
 
@@ -126,8 +128,11 @@ Os datasets IMNET foram processados conforme o descrito a seguir:
 ### S2iD (Sistema Integrado de Informações sobre Desastres)
 
 O dataset  S2iD foi processado condorme o descrito a seguir:
+
   - feito o download da série histórica. Foram filtrados somente os desastres do tipo hidrológico (enxurradas, alagamentos, chuvas intensas, movimento de massa e inundações) para a cidade de São Paulo.
+    
   - selecionadas as colunas mais significativas para uso no projeto para o treinamento de  ML/DL:
+    
     * DATA_EVENTO
     * TIPO_EVENTO
     * ÓBITOS
@@ -175,11 +180,6 @@ O sistema é construído em Python e utiliza diversas bibliotecas para diferente
 
 Resumo geral da arquitetura do programa:
 
-Arquitetura Geral do Programa GS2_OFICIAL
-A estrutura de arquivos e pastas sugere um projeto de machine learning e/ou análise de dados com foco em modelos preditivos, possivelmente relacionados a níveis esperados e previsão de chuvas, conforme indicado pelos nomes dos modelos.
-
-Aqui está uma breakdown dos componentes:
-
 **app.py** 
 
 É a interface que permite a interação com as previsões ou análises geradas pelos modelos.
@@ -207,9 +207,6 @@ Script responsável pelas seguintes funcionalidades:
   * incorpora a lógica de avaliação de risco de enchente, realizando os cálculos e classificações necessárias
   * interage com o banco de dados Oracle para salvar as leituras dos sensores
   * garante que os alertas SMS sejam disparados para os números configurados quando as condições de risco atingem os limiares predefinidos.
-
-
-
 
 
 ## 📊 ANÁLISE EXPLORATÓRIA DOS DADOS
