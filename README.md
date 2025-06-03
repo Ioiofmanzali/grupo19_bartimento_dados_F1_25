@@ -325,7 +325,7 @@ Seu Pull Request será revisado pela equipe e, se tudo estiver correto, será ac
 
 - <b>assets</b>: imagens utilizadas no projeto e documentação
 
-- - <b>docs</b>: códigos auxiliares utilizadas no projeto
+- <b>docs</b>: códigos auxiliares utilizadas no projeto
   
 - <b>src</b>: códigos principais do programa
   
