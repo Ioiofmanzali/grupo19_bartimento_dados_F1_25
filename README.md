@@ -61,11 +61,12 @@ Maiores informações sobre a instalação e uso dessas linguagens de Programaç
 
 3. Oracle: https://www.oracle.com.br
 
-4. APEX ORacle: https://apex.oracle.com/pt-br/
+4. APEX Oracle: https://apex.oracle.com/pt-br/
+
 
 ## 🛠️ TECNOLOGIAS UTILIZADAS
 
-![Streamlit](https://img.shields.io/badge/Streamlit-%23FE4B4B.svg?style=for-the-badge&logo=streamlit&logoColor=white) &nbsp; ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) &nbsp; ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=Oracle&logoColor=white) 	
+![Streamlit](https://img.shields.io/badge/Streamlit-%23FE4B4B.svg?style=for-the-badge&logo=streamlit&logoColor=white) &nbsp; ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) &nbsp; ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=Oracle&logoColor=white) ![APEX](https://cdn.rawgit.com/Dani3lSun/apex-github-badges/88f0a6ed/badges/apex-24.3-badge.svg) 	
 
 
 ### 1. ORACLE
