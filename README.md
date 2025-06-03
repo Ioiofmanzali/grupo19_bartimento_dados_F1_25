@@ -66,7 +66,8 @@ Maiores informações sobre a instalação e uso dessas linguagens de Programaç
 
 ## 🛠️ TECNOLOGIAS UTILIZADAS
 
-![Streamlit](https://img.shields.io/badge/Streamlit-%23FE4B4B.svg?style=for-the-badge&logo=streamlit&logoColor=white) &nbsp; ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) &nbsp; ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=Oracle&logoColor=white) [![Oracle APEX 24.2](https://img.shields.io/badge/Oracle%20APEX-24.2-red?logo=oracle&logoColor=white)](https://apex.oracle.com)
+![Streamlit](https://img.shields.io/badge/Streamlit-%23FE4B4B.svg?style=for-the-badge&logo=streamlit&logoColor=white) &nbsp; ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) &nbsp; ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=Oracle&logoColor=white) ![Oracle APEX 24.2](https://img.shields.io/badge/Oracle%23APEX-24.2-red?logo=oracle&logoColor=white)
+
 
 
 
