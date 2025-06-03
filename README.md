@@ -141,93 +141,76 @@ O dataset  S2iD foi processado condorme o descrito a seguir:
     * DANO_PATRIMONIO_PL
 
   ** Obs: todos os parâmetros acima estão estritamente relacionados aos desastres naturais.
-  ** Conceitos importantes:
-
-  Óbitos: Número de pessoas que morreram em decorrência do evento.
-
-Feridos: Pessoas que sofreram lesões físicas e necessitam de atendimento médico.
-
-Enfermos: Indivíduos que desenvolveram doenças ou tiveram sua saúde agravada por causa do evento.
-
-Desabrigados: Pessoas que perderam suas casas e não têm onde morar, precisando de abrigo temporário (geralmente em abrigos públicos).
-
-Desalojados: Indivíduos que foram forçados a sair de suas casas temporariamente, mas podem retornar a elas após a situação se normalizar, ou que buscaram refúgio em casas de parentes/amigos.
-
-Desaparecidos: Pessoas cujo paradeiro é desconhecido após o evento e há preocupação com sua segurança ou vida.
-
-Residências Danificadas: Casas que sofreram algum tipo de estrago estrutural ou material, mas que podem ser reparadas e habitadas novamente.
-
-Residências Destruídas: Casas que foram completamente arrasadas ou danificadas de forma irreparável, tornando-as inabitáveis.
-
-Dano Patrimônio Público: Prejuízos causados a bens e infraestruturas de propriedade do governo, como escolas, hospitais, estradas, pontes, etc.
   
+#### Glossário de Impactos em Desastres
 
-
-link wokwi: https://wokwi.com/projects/432676821844364289
-
+| Conceito                   | Descrição                                                                                               |
+| :------------------------- | :------------------------------------------------------------------------------------------------------ |
+| **Óbitos** | Número de pessoas que **morreram** em decorrência do evento.                                            |
+| **Feridos** | Pessoas que sofreram **lesões físicas** e necessitam de atendimento médico.                             |
+| **Enfermos** | Indivíduos que desenvolveram **doenças** ou tiveram sua saúde agravada por causa do evento.             |
+| **Desabrigados** | Pessoas que **perderam suas casas** e não têm onde morar, precisando de abrigo temporário.              |
+| **Desalojados** | Indivíduos que foram **forçados a sair de suas casas temporariamente**, mas podem retornar ou se abrigaram em casas de parentes/amigos. |
+| **Desaparecidos** | Pessoas cujo **paradeiro é desconhecido** após o evento e há preocupação com sua segurança ou vida.     |
+| **Residências Danificadas**| Casas que sofreram **algum tipo de estrago** estrutural ou material, mas podem ser reparadas.            |
+| **Residências Destruídas** | Casas que foram **completamente arrasadas** ou danificadas de forma irreparável.                        |
+| **Dano Patrimônio Público**| Prejuízos causados a **bens e infraestruturas de propriedade do governo** (escolas, hospitais, estradas, etc.). |
+  
 ## ➡️ ARQUITETURA DO PROGRAMA
 
 O sistema é construído em Python e utiliza diversas bibliotecas para diferentes funcionalidades:
 
 * Streamlit: Para a criação da interface de usuário interativa.
+* Streamlit_autorefresh: 
 * Pandas: Para manipulação e análise de dados tabulares.
 * NumPy: Para operações numéricas.
 * Scikit-learn (sklearn): Para implementação de modelos de machine learning (Regressão Linear, SVR, Random Forest, Gradient Boosting), divisão de dados, otimização de hiperparâmetros (GridSearchCV) e métricas de avaliação (mean_squared_error).
-* Pickle: Para serialização e desserialização de modelos de machine learning treinados.
 * OS: Para interação com o sistema operacional (criação de diretórios, verificação de arquivos).
 * Requests: Para realizar requisições HTTP para obter dados de uma API Oracle.
 * Datetime: Para manipulação de datas e horas.
 * Matplotlib e Plotly: Para criação de visualizações de dados.
 * Locale: Para formatação de números e datas de acordo com a localidade (português do Brasil).
 * IO (BytesIO): Para trabalhar com dados binários em memória.
+* Joblib: 
 
 Resumo geral da arquitetura do programa:
 
-* Interface de Usuário (Streamlit): O usuário interage com a aplicação através de uma interface web, navegando por diferentes páginas (Sobre o Projeto, Links, Análise Exploratória, Treinamento de Modelos, Previsão de Produtividade).
+Arquitetura Geral do Programa GS2_OFICIAL
+A estrutura de arquivos e pastas sugere um projeto de machine learning e/ou análise de dados com foco em modelos preditivos, possivelmente relacionados a níveis esperados e previsão de chuvas, conforme indicado pelos nomes dos modelos.
 
-* Carregamento de Dados (API Oracle): A aplicação realiza requisições HTTP GET para uma API Oracle, buscando dados de diferentes tipos: NDVI, produtividade, meteorológicos e custos. Uma função de caching (@st.cache_data) é utilizada para evitar chamadas repetidas à API.
+Aqui está uma breakdown dos componentes:
 
-* Análise Exploratória: Permite visualizar informações básicas sobre os dados carregados, como número de linhas, colunas, valores ausentes, duplicados e exibir séries históricas através de gráficos. Também oferece a opção de baixar os dados em formato CSV.
+**app.py** 
 
-* Treinamento de Modelos: O usuário pode selecionar diferentes modelos de regressão supervisionada (Regressão Linear, SVR, Random Forest, Gradient Boosting) para serem treinados com os dados de produtividade. A biblioteca GridSearchCV é utilizada para encontrar os melhores hiperparâmetros para cada modelo através de validação cruzada. Os modelos treinados e seus respectivos resultados são salvos em arquivos .pkl no diretório modelos_treinados. O melhor modelo treinado (com menor Root Mean Squared Error - RMSE) também é identificado e salvo.
+É a interface que permite a interação com as previsões ou análises geradas pelos modelos.
 
-* Estimativa de Produtividade: Permite ao usuário inserir informações sobre a localidade, cultura, ano e mês de plantio, e área plantada. Utiliza o melhor modelo treinado para prever a produtividade para as condições especificadas.
+**main.py**
 
-* Persistência de Modelos: Os modelos treinados são salvos localmente utilizando a biblioteca pickle, permitindo que sejam reutilizados sem a necessidade de retreinamento a cada execução da aplicação.
-  
-### ➡️ PERSISTÊNCIA E CACHING
+Script para executar lógica do ESP 32 com integraçao ao vanco de dados via API Oracle.
 
-* Caching de Dados
+**oracle.sql**
 
-A utilização do decorador @st.cache_data nas funções de carregamento de dados da API Oracle melhora a performance da aplicação, evitando requisições desnecessárias à API. Os dados são cacheados na memória e reutilizados em execuções subsequentes ou reruns do Streamlit, a menos que haja uma mudança nos parâmetros da função cacheada.
+Contem os scripts para criação das tabelas de nivel de agua e nivel de chuva
 
-* Persistência de Modelos
+**requirements.txt**
 
-Os modelos de machine learning treinados são salvos em arquivos .pkl (formato de serialização do Python) no diretório modelos_treinados. Isso permite que os modelos sejam carregados posteriormente (na página de previsão de produtividade) sem a necessidade de serem retreinados a cada vez que a aplicação é iniciada. O melhor modelo treinado também é salvo em um arquivo separado (melhor_modelo.pkl), contendo o nome do modelo, o objeto do modelo treinado, os melhores hiperparâmetros encontrados e o score obtido.
+Lista as bibliotecas e suas versões específicas das quais o projeto depende. 
 
-## ➡️ VARIÁVEIS E JUSTIFICATIVA DE USO
+**treinar_modelos.py**
 
-* NDVI (Índice de Vegetação Normalizada) 
+Script responsável por carregar os dados dos datasets, pré-processá-los, treinar os modelos de machine learning e salvá-los no formato .joblib.
 
-** extraídos do site SATVEG-EMBRAPA
+**utils.py**
 
-* Dados de Produtividade
+Script responsável pelas seguintes funcionalidades: 
+  * chamadas às APIs de terceiros (Oracle Cloud nivel_agua, volume_chuva, leituras e AWS Lambda alertaEnchente)
+  * incorpora a lógica de avaliação de risco de enchente, realizando os cálculos e classificações necessárias
+  * interage com o banco de dados Oracle para salvar as leituras dos sensores
+  * garante que os alertas SMS sejam disparados para os números configurados quando as condições de risco atingem os limiares predefinidos.
 
-** Serie histórica de área plantada, área colhida e rendimento médio da cultura do milho no municipio de Sorriso entre os anos de 2015 e 2025. Para o ano de 2025 os dados foram atualizados até o dia 10 de fevereiro.
 
-* Dados Meteorológicos
 
-** Informações climáticas como precipitação, pressão atmosférica, radiação solar global, temperatura do bulbo seco, temperatura do orvalho, umidade relativa e velocidade do vento.
 
-* Dados de Custos (baseados em balanços anuais) 
-
-** Série histórica sobre custos de produção agrícola baseados em balanços patrimoniais anuais presentes no site da Conab.
-
-Para a previsão de produtividade, o modelo treinado utiliza o NDVI como label, sendo as  demais variáveis coletadas complementares, atuando como as features preditivas.
-
-A escolha do NDVI como label, em vez da produtividade final diretamente, fundamenta-se na sua forte correlação com a saúde e o vigor da vegetação em estágios fenológicos chave. Embora a produtividade seja o objetivo final da previsão, o NDVI oferece uma medida quantitativa e sensível das condições da cultura ao longo do seu ciclo de desenvolvimento. Ao modelar a relação entre as diversas features e o NDVI, o programa aprende a identificar padrões que indicam um desenvolvimento vegetal promissor (ou não).
-
-A lógica subjacente é que um NDVI elevado e sustentado durante períodos críticos do crescimento da cultura está intrinsecamente ligado a um maior potencial de produtividade futura. 
 
 ## 📊 ANÁLISE EXPLORATÓRIA DOS DADOS
 
@@ -261,6 +244,8 @@ A saída deste processo consistiu em estimativas quantitativas da produtividade 
 
 [IBGE](https://sidra.ibge.gov.br/tabela/839)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 [INMET](https://portal.inmet.gov.br/dadoshistoricos)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CONAB](https://www.conab.gov.br/info-agro/custos-de-producao/planilhas-de-custo-de-producao/item/16269-serie-historica-custos-milho-2-safra-2005-a-2021)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SATVEG](&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+
+link wokwi: https://wokwi.com/projects/432676821844364289
 
 ## 📣 PRÓXIMOS PASSOS
 
