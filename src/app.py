@@ -8,28 +8,22 @@ from datetime import datetime
 from utils import buscar_nivel_rio, buscar_volume_chuva, salvar_leitura, enviar_alerta_sms, risco_enchente
 import os
 
-
 def on_volume_change():
     salvar_leitura('CHUVA', st.session_state.volume_chuva_hoje)
-
 
 def on_nivel_change():
     salvar_leitura('RIO', st.session_state.nivel_rio_hoje)
 
-
 # --- Configurações e Constantes
 PATH = os.path.dirname(os.path.abspath(__file__))
-
-# AJUSTE OS NOMES DOS ARQUIVOS DE MODELO (JÁ DEVE ESTAR ASSIM APÓS A ÚLTIMA CORREÇÃO)
-PATH_MODELO_ESPERADO = PATH + "/modelos/melhor_modelo_nivel_esperado.joblib"
-PATH_MODELO_PREVISAO_CHUVA = PATH + "/modelos/melhor_modelo_previsao_chuva.joblib"
-
+PATH_MODELO_ESPERADO = PATH + "/modelos/modelo_nivel_esperado.joblib"
+PATH_MODELO_PREVISAO_CHUVA = PATH + "/modelos/modelo_previsao_chuva.joblib"
 CIDADE_ALVO = "São Paulo"
 data_atual = datetime.now()
 
 # Definindo um valor mínimo global para os inputs.
 MIN_CHUVA_INPUT_VALUE = 0.0
-MIN_RIO_INPUT_VALUE = 0.0
+MIN_RIO_INPUT_VALUE = 0.0 
 
 try:
     volume_chuva_raw = float(buscar_volume_chuva()['items'][0]['valor'])
@@ -38,7 +32,7 @@ try:
 except Exception as e:
     st.error(
         f"Erro ao buscar volume de chuva: {e}. Usando {MIN_CHUVA_INPUT_VALUE} como padrão.")
-    volume_chuva = MIN_CHUVA_INPUT_VALUE    # Fallback para 0.0 se houver erro
+    volume_chuva = MIN_CHUVA_INPUT_VALUE  # Fallback para 0.0 se houver erro
 
 try:
     nivel_rio_raw = float(buscar_nivel_rio()['items'][0]['valor'])
@@ -47,7 +41,7 @@ try:
 except Exception as e:
     st.error(
         f"Erro ao buscar nível do rio: {e}. Usando {MIN_RIO_INPUT_VALUE} como padrão.")
-    nivel_rio = MIN_RIO_INPUT_VALUE    #
+    nivel_rio = MIN_RIO_INPUT_VALUE  # 
 
 # --- Layout da Aplicação
 st.set_page_config(page_title=f"Monitor Enchente {CIDADE_ALVO}", layout="wide")
@@ -59,14 +53,14 @@ count = st_autorefresh(interval=30 * 1000, limit=None,
 limite_grave = st.sidebar.number_input(
     "Nível de Água Considerado Grave (m):",
     min_value=0.0,
-    value=750.0,
+    value=750.0, 
     step=0.5,
     help="Informe o nível de água em metros."
 )
 limite_moderado = st.sidebar.number_input(
     "Nível de Água Considerado Moderado (m):",
     min_value=0.0,
-    value=600.0,
+    value=600.0, 
     step=0.5,
     help="Informe o nível de água em metros."
 )
@@ -74,7 +68,7 @@ limite_moderado = st.sidebar.number_input(
 st.sidebar.header("Simulador de Sensores")
 nivel_rio_hoje = st.sidebar.number_input(
     "Nível Atual do Rio (m):",
-    min_value=MIN_RIO_INPUT_VALUE,
+    min_value=MIN_RIO_INPUT_VALUE,   
     value=nivel_rio,
     step=0.5,
     help="Informe o nível do rio em metros.",
@@ -95,16 +89,15 @@ st.sidebar.markdown("---")
 st.sidebar.subheader("FIAP - Global Solution - Grupo 08")
 st.sidebar.markdown("""
 <div style='font-size: 1em; line-height: 0.6'>
-    <p>Iolanda Manzali</p>
-    <p>Pedro Sousa</p>
-    <p>Murilo Nasser</p>
-    <p>Jônatas Alves</p>
-    <p>Amanda Fragnan</p>
+        <p>Iolanda Manzali</p>
+        <p>Pedro Sousa</p>
+        <p>Murilo Nasser</p>
+        <p>Jônatas Alves</p>
+        <p>Amanda Fragnan</p>
 </div>
 """, unsafe_allow_html=True)
 
 # --- Carregar Modelos de IA
-
 
 @st.cache_resource
 def carregar_modelos_treinados():
@@ -157,10 +150,8 @@ def prever_nivel_com_chuva(modelo, current_level, rainfall_mm, current_datetime)
         day_of_year = current_datetime.timetuple().tm_yday
         day_of_week = current_datetime.weekday()
 
-        # ***** LINHA CORRIGIDA AQUI *****
         features_for_prediction = pd.DataFrame([[rainfall_mm, hour, day_of_year, day_of_week]],
-                                               columns=['CHUVA_DIA', 'HOUR', 'DAY_OF_YEAR', 'DAY_OF_WEEK'])
-        # ********************************
+                                               columns=['CHUVA_MM', 'HOUR', 'DAY_OF_YEAR', 'DAY_OF_WEEK'])
 
         prediction = modelo.predict(features_for_prediction)
         return prediction[0]
@@ -171,13 +162,12 @@ def prever_nivel_com_chuva(modelo, current_level, rainfall_mm, current_datetime)
 
 
 # --- Painel Principal ---
-if modelo_nivel_esperado is not None and modelo_previsao_chuva is not None:
+if nivel_rio_hoje is not None and modelo_nivel_esperado is not None and modelo_previsao_chuva is not None:
     nivel_esperado_hoje = prever_nivel_esperado(
         modelo_nivel_esperado, data_atual)
     nivel_previsto_chuva = prever_nivel_com_chuva(
-        modelo_previsao_chuva, nivel_rio_hoje, volume_chuva_hoje, data_atual)
+        modelo_previsao_chuva, nivel_rio_hoje, -volume_chuva_hoje, data_atual)
 
-    # ... (o restante do seu código Streamlit permanece inalterado)
     # --- Exibir Métricas Principais ---
     st.subheader("Visão Geral dos Níveis do Rio")
     col1, col2, col3 = st.columns(3)
@@ -272,4 +262,3 @@ else:
     if modelo_nivel_esperado is None or modelo_previsao_chuva is None:
         st.error("Modelos de IA não carregados. Verifique os arquivos e logs.")
     st.info("Aguardando dados e modelos para processamento...")
-
