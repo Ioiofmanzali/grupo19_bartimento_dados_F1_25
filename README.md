@@ -112,7 +112,7 @@ As operações de consumo de API são encapsuladas em blocos try-except.
 
 A interface do usuário é organizada em uma única página.
 
-![pagina_inicial](https://github.com/Ioiofmanzali/GLOBAL_SOLUTION_2_-GRUPO81TIAO/blob/main/assets/app_pp.JPG)
+![pagina_inicial](https://github.com/Ioiofmanzali/GLOBAL_SOLUTION_2_-GRUPO81TIAO/blob/main/assets/rio_780.JPG)
 
 
 A interface mostra os níveis atual, esperado e previsto do rio e a classificação do risco de enchente.
