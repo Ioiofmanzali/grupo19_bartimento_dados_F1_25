@@ -23,7 +23,7 @@ data_atual = datetime.now()
 
 # Definindo um valor mínimo global para os inputs.
 MIN_CHUVA_INPUT_VALUE = 0.0
-MIN_RIO_INPUT_VALUE = 700.0  # 
+MIN_RIO_INPUT_VALUE = 0.0 
 
 try:
     volume_chuva_raw = float(buscar_volume_chuva()['items'][0]['valor'])
@@ -53,14 +53,14 @@ count = st_autorefresh(interval=30 * 1000, limit=None,
 limite_grave = st.sidebar.number_input(
     "Nível de Água Considerado Grave (m):",
     min_value=0.0,
-    value=720.0, 
+    value=750.0, 
     step=0.5,
     help="Informe o nível de água em metros."
 )
 limite_moderado = st.sidebar.number_input(
     "Nível de Água Considerado Moderado (m):",
     min_value=0.0,
-    value=718.0, 
+    value=600.0, 
     step=0.5,
     help="Informe o nível de água em metros."
 )
@@ -166,7 +166,7 @@ if nivel_rio_hoje is not None and modelo_nivel_esperado is not None and modelo_p
     nivel_esperado_hoje = prever_nivel_esperado(
         modelo_nivel_esperado, data_atual)
     nivel_previsto_chuva = prever_nivel_com_chuva(
-        modelo_previsao_chuva, nivel_rio_hoje, volume_chuva_hoje, data_atual)
+        modelo_previsao_chuva, nivel_rio_hoje, -volume_chuva_hoje, data_atual)
 
     # --- Exibir Métricas Principais ---
     st.subheader("Visão Geral dos Níveis do Rio")
