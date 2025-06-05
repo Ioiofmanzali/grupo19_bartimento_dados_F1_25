@@ -213,7 +213,7 @@ Para a geração de alertas proativos, a arquitetura se integra com serviços da
     
     AWS Lambda: Funções serverless que são acionadas via API Gateway para processar os dados de monitoramento e aplicar a lógica de negócio para determinar se um alerta deve ser enviado.
     
-    Amazon SNS (Simple Notification Service): Uma vez que a função Lambda decide que um alerta é necessário, o SNS é utilizado para enviar notificações em massa para os assinantes.
+    Amazon SNS (Simple Notification Service): Uma vez que a função Lambda decide que um alerta é necessário, o SNS é utilizado para enviar notificações para os assinantes.
 
 O Amazon SNS envia as notificações de alerta diretamente para os usuários via SMS.
 
