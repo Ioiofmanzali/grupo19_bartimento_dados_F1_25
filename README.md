@@ -327,8 +327,15 @@ Seu Pull Request será revisado pela equipe e, se tudo estiver correto, será ac
 
 ### Wokwi
 
-Clique no link a seguir para acessar o projeto ESP 32 [[LINK PARA O PROJETO GLOBAL_SOLUTION_2](https://wokwi.com/projects/432676821844364289)]
+1. Acesse o Wokwi
 
+Abra seu navegador e vá para o link de simulação do Wokwi para este projeto:
+
+[[LINK WOKWI](https://wokwi.com/projects/432676821844364289)]
+
+2. Inicie a Simulação
+  
+Uma vez na página do Wokwi, procure e clique no botão verde "Play" (geralmente localizado na parte superior ou lateral da interface) e poderá visualizar os dados gerados pelo código atraves do monitos de LCD.
 
 ## 📁 ESTRUTURA DE PASTAS
 
@@ -342,7 +349,7 @@ Clique no link a seguir para acessar o projeto ESP 32 [[LINK PARA O PROJETO GLOB
 
 ##  🎬 VIDEO DEMONSTRATIVO
 
-falta fazer
+só falta o video.....
 
 ## 🗃 HISTÓRICO DE LANÇAMENTOS
 
