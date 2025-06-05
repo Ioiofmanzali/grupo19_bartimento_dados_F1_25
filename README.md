@@ -37,11 +37,11 @@ Autores: Amanda Fragnan, Iolanda Manzali, Jonatas Gomes, Murilo Nasser, Pedro So
 
 A cidade de São Paulo enfrenta, ano após ano, o desafio crescente das enchentes, alagamentos, chuvas intensas e enxurradas. Fenômenos como esses têm se tornado cada vez mais frequentes e severos, impactando diretamente a vida dos moradores, a mobilidade urbana e a infraestrutura da capital. Em 2025, por exemplo, episódios de chuva forte colocaram praticamente todas as regiões da cidade em estado de atenção, com registros de ruas e avenidas alagadas, bairros como Santo Amaro e Piraporinha submersos, quedas de árvores e milhares de imóveis sem energia elétrica.
 
-A topografia acidentada, a impermeabilização do solo e o crescimento acelerado da cidade agravam o risco de transbordamento de rios e córregos, além de potencializar o impacto das enxurradas e enchentes. Mesmo com investimentos em drenagem, monitoramento e sistemas de alerta, São Paulo segue vulnerável a eventos extremos, que causam prejuízos materiais, perdas humanas e demandam respostas rápidas do poder público.
+A topografia acidentada, a impermeabilização do solo e o crescimento acelerado da cidade agravam o risco de transbordamento de rios e córregos, além de potencializar o impacto das enxurradas e enchentes. Mesmo com investimentos em drenagem, monitoramento e sistemas de alerta, São Paulo segue vulnerável a eventos extremos, que causam prejuízos materiais, perdas humanas e demandam respostas rápidas do Poder Público.
 
-Diante desse cenário, torna-se fundamental investir em soluções digitais inovadoras, capazes de prever, monitorar e mitigar os impactos desses desastres. A análise de dados reais, o uso de inteligência artificial e o cruzamento de informações meteorológicas e ambientais permitem antecipar riscos, emitir alertas e orientar ações preventivas, contribuindo para uma cidade mais resiliente e segura para todos.
+Diante desse cenário, torna-se fundamental investir em soluções digitais inovadoras, capazes de prever, monitorar e mitigar os impactos desses desastres. A análise de dados reais, o uso de Inteligência Artificial e o cruzamento de informações meteorológicas e ambientais permitem antecipar riscos, emitir alertas e orientar ações preventivas, contribuindo para uma cidade mais segura para todos.
 
-A aplicação foi desenvolvida para monitoramento de eventos e emissão de alertas para desastre hidrológicos (chuvas intensas, enxurradasm alagamentos e inundações) enviados via SMS (API AWS SNS) somente somente para Gestores Públicos, Defesa Civil, Corpo de Bombeiros e entidades emnvolvidas com a gestão de desastres naturais. Por isso optamos por deixar a aplicação principal somente com as informações necessárias para o nosso objetivo, que é criar uma aplicação com interface em Streamlit, amigável e que permita a visualização dos dados de nvel do rio e chuvas e dispare um alerta via SMS para os números de telefone cadastrados.
+A aplicação foi desenvolvida para monitoramento de eventos e emissão de alertas para desastre hidrológicos (chuvas intensas, enxurradas, alagamentos e inundações) enviados via SMS (API AWS via SNS) exxlusivamente para Gestores Públicos, Defesa Civil, Corpo de Bombeiros e entidades envolvidas com a gestão de desastres naturais. Por isso optamos por deixar a aplicação principal somente com as informações necessárias para o nosso objetivo, que é criar uma interface em Streamlit, amigável e que permita a visualização dos dados de nvel do rio e chuvas e dispare um alerta via SMS para os números de telefone previamente cadastrados.
 
 Para fins acadêmicos os arquivos relacionados a análise exploratória, treinamento de ML e DL, ESP32 estão disponíveis na pasta 'docs' desse GitHub, porém não são visualizados na aplicação principal do Streamlit.
     
@@ -117,20 +117,20 @@ A interface do usuário é organizada em uma única página.
 
 A interface mostra os níveis atual, esperado e previsto do rio e a classificação do risco de enchente.
 
-Na aba lateral, podemos determinar o nivel de agua (grave e moderado) e tambem simular situações com valores atribuidos de nivel do rio e chuvas. 
+Na aba lateral, podemos determinar o nivel de água (grave e moderado) e tambem simular situações com valores atribuidos de nível de rio e chuva. 
 
 ## 📚 DATASETS
 
 ### INMET
 
 Os datasets IMNET foram processados conforme o descrito a seguir:
-  - Preenchimento de valores ausentes: a maioria dos valores ausentes do dataset INMET está na coluna de radiacao global, que nao foi utilizada para esse projeto. Para os campos precipitacao_total não foram encontrados valores ausentes ou duplicados.
+  - Preenchimento de valores ausentes: a maioria dos valores ausentes do dataset INMET está na coluna de radiacao_global, que não foi utilizada nesse projeto. Para os campos precipitacao_total não foram encontrados valores ausentes ou duplicados.
 
 ### S2iD (Sistema Integrado de Informações sobre Desastres)
 
 O dataset  S2iD foi processado condorme o descrito a seguir:
 
-  - feito o download da série histórica. Foram filtrados somente os desastres do tipo hidrológico (enxurradas, alagamentos, chuvas intensas, movimento de massa e inundações) para a cidade de São Paulo.
+  - feito o download da série histórica e filtrados somente os desastres do tipo hidrológico (enxurradas, alagamentos, chuvas intensas, movimento de massa e inundações) para a cidade de São Paulo.
     
   - selecionadas as colunas mais significativas para uso no projeto para o treinamento de  ML/DL:
     
@@ -194,6 +194,40 @@ Resumo geral da arquitetura do programa:
 ## SISTEMA DE ALERTA (AWS)
 
 ![alertaaws](https://github.com/Ioiofmanzali/GLOBAL_SOLUTION_2_-GRUPO81TIAO/blob/main/assets/alertaaws.JPG)
+
+A arquitetura do sistema é composta por diversas camadas interconectadas, garantindo a coleta, processamento, análise e disseminação das informações:
+
+Um dispositivo ESP32 é responsável pela coleta de dados ambientais, como temperatura (Temp), umidade (Humid), nível do rio (RioLevel) e nível da chuva (Chuva).
+
+Os dados coletados são enviados para uma API de dados Oracle, onde são armazenados e ficam disponíveis para consumo.
+
+Um display local no ESP32 mostra as leituras em tempo real, indicando a temperatura, umidade, nível do rio e o nível da chuva.
+
+Um módulo central de Monitoramento dos Níveis do Rio e da Chuva acessa os dados da API Oracle.
+
+Os dados de nível atual (do rio e/ou da chuva) são enviados para um Aplicativo Streamlit com Inteligência Artificial.
+
+Para a geração de alertas proativos, a arquitetura se integra com serviços da Amazon Web Services (AWS):
+
+    Amazon API Gateway: Atua como um ponto de entrada seguro e escalável para as requisições que acionam o processo de alerta.
+    
+    AWS Lambda: Funções serverless que são acionadas via API Gateway para processar os dados de monitoramento e aplicar a lógica de negócio para determinar se um alerta deve ser enviado.
+    
+    Amazon SNS (Simple Notification Service): Uma vez que a função Lambda decide que um alerta é necessário, o SNS é utilizado para enviar notificações em massa para os assinantes.
+
+O Amazon SNS envia as notificações de alerta diretamente para os usuários via SMS.
+
+A mensagem de alerta inclui informações cruciais como:
+
+    ALERTA ENCHENTE SÃO PAULO: Indicação clara do tipo de evento.
+    
+    Risco GRAVE: Classificação do risco.
+    
+    Nível atual: O nível atual do rio.
+    
+    Previsão: A quantidade de chuva prevista e o nível de rio esperado.
+    
+    Data e Hora: O momento em que o alerta foi emitido.
 
 
 ## 📊 ANÁLISE EXPLORATÓRIA DOS DADOS
