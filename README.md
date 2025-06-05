@@ -198,20 +198,28 @@ Resumo geral da arquitetura do programa:
 
 ## 📊 ANÁLISE EXPLORATÓRIA DOS DADOS
 
-falta fazer
+O projeto é dividido em etapas principais: 
 
-## 📈 TREINAMENTO E ESCOLHA DO MELHOR MODELO DE ML
+Coleta e Preparação dos Dados:
 
-O projeto utiliza os modelos com o objetivo de encontrar a combinação que oferece o melhor desempenho de generalização para os dados, ou seja, que consegue fazer as previsões mais precisas em dados não vistos durante o treinamento para prever o risco de enchente. 
+Foram utilizados dois arquivos CSV: inmet_sp.csv (contendo dados meteorológicos, incluindo precipitação) e desastres_sp.csv (com informações sobre eventos e desastres, onde extraímos dados relacionados ao nível de rios).
+As features "chuva" (do arquivo INMET) e "rio" (do arquivo de desastres) foram selecionadas para a análise.
 
-Os modelos implementados são: print do codigo com os modelos
+Análise Exploratória de Dados (EDA):
 
-Método selecionado para selecionar o 'melhor modelo' com os 'melhores hiperparâmetros': GridSearchCV
+Foram realzadas as etapas de pre-processamento e tratamento dos dados.
+Utilizamos histogramas para visualizar a frequência de ocorrência de diferentes volumes de chuva e níveis de rio.
+Box plots foram empregados para identificar a dispersão dos dados e a presença de outliers, que podem indicar eventos extremos (chuvas intensas ou níveis de rio muito elevados/baixos).
 
-Métrica utilizada para seleção do modelo: xxxxxx
+Após a exploração e limpeza inicial, as features "chuva" e "rio" foram mescladas em um único conjunto de dados. Esta união foi feita com base em uma chave comum (provavelmente data ou localização, dependendo da estrutura original dos arquivos) para garantir a correlação correta entre os eventos de chuva e os níveis de rio correspondentes.
 
-Oos modelos para nivel de chuva e nivel de rio são salvos em .joblib e utilizados no app.py para previsão por IA.
+Para visualização do codigo  e da visualizacao gráfica dos da análise exploratória sugerimos que acesse os arquivos **desastres.ipynb** e **inmet_sp.ipynb**, ambos localizados na pasta 'docs' desse repositório.
 
+## 📈 TREINAMENTO DO MODELO DE ML
+
+O projeto utiliza o modelo de Regressão Linear visto que há uma relação   modelos com o objetivo de encontrar a combinação que oferece o melhor desempenho de generalização para os dados, ou seja, que consegue fazer as previsões mais precisas em dados não vistos durante o treinamento para prever o risco de enchente. 
+
+A escolha da regressão linear como modelo ideal para analisar a relação entre "chuva" e "rio" neste projeto foi fortemente influenciada pelo tipo dos dados e tambem pelas caracteristicas das features serem quantitativas e contínuas.  Os modelos para nivel de chuva e nivel de rio foram salvos em .joblib e utilizados no app.py para previsão por IA.
 
 ## 🌧️ ESP 32 COM SENSORES
 
