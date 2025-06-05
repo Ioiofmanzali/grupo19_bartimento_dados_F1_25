@@ -327,7 +327,7 @@ Seu Pull Request será revisado pela equipe e, se tudo estiver correto, será ac
 
 ### Wokwi
 
-Clique no link a seguir para acessar o projeto ESP 32 [![WOKWI](https://github.com/Ioiofmanzali/GLOBAL_SOLUTION_2_-GRUPO81TIAO/blob/main/assets/esp_32.JPG)]
+Clique no link a seguir para acessar o projeto ESP 32 [[LINK PARA O PROJETO GLOBAL_SOLUTION_2](https://wokwi.com/projects/432676821844364289)]
 
 
 ## 📁 ESTRUTURA DE PASTAS
