@@ -315,6 +315,7 @@ Seu Pull Request será revisado pela equipe e, se tudo estiver correto, será ac
 
 ## COMO RODAR O PROGRAMA A PARTIR DO VSCODE
 
+### Streamlit
 1. Abrir o Terminal no VS Code
      No menu superior, clique em Terminal e depois em Novo Terminal ou utilize o atalho "CTRL J". Isso abrirá um painel de terminal na parte inferior da janela do VS Code.
      
@@ -323,6 +324,11 @@ Seu Pull Request será revisado pela equipe e, se tudo estiver correto, será ac
  ** após executar o comando streamlit run app.py, o Streamlit irá iniciar um servidor local e abrir automaticamente o seu aplicativo em uma nova aba do seu navegador web padrão.
  
  ** também aparecerá no terminal o endereço local onde o aplicativo está rodando (pode copiar e colar esse endereço no seu navegador, caso ele não abra automaticamente).
+
+### Wokwi
+
+Clique no link a seguir para acessar o projeto ESP 32 [![WOKWI](https://github.com/Ioiofmanzali/GLOBAL_SOLUTION_2_-GRUPO81TIAO/blob/main/assets/esp_32.JPG)]
+
 
 ## 📁 ESTRUTURA DE PASTAS
 
