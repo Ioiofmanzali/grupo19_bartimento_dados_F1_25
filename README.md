@@ -383,7 +383,7 @@ Uma vez na página do Wokwi, procure e clique no botão verde "Play" (geralmente
 
 ##  🎬 VIDEO DEMONSTRATIVO
 
-só falta o video.....
+[Video demonstrativo do Projeto](https://youtu.be/Y8b9HNfbJVU)
 
 ## 🗃 HISTÓRICO DE LANÇAMENTOS
 
