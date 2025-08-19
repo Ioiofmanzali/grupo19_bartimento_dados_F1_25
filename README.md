@@ -6,11 +6,11 @@
 
 <br>
 
-# PROJETO - GLOBAL SOLUTION 2  
+# PROJETO FASE 1/25 - **BATIMENTOS DE DADOS - MAPEANDO O CORAÇÃO MODERNO**  
 
 ![capa](https://github.com/Ioiofmanzali/grupo19_bartimento_dados_F1_25/blob/main/assets/cora%C3%A7%C3%A3o.JPG)
 
-## Grupo 8
+## Grupo 19
 
 ## 👨‍🎓 Integrantes: 
 - <a href="https://www.linkedin.com/in/jonatasgomes">Jônatas Gomes Alves</a>
@@ -25,9 +25,6 @@
 ### Coordenador(a)
 - <a href="https://www.linkedin.com/company/inova-fusca">Andre Godoi Chaviato</a>
 
-## :page_with_curl:DOCUMENTAÇÃO
-
-Documentação Técnica do Projeto "GLOBAL SOLUTION - 2o SEMESTRE"
 
 ![Versão 1.0.0](https://img.shields.io/badge/Vers%C3%A3o%201.0.0-gray?style=flat) 
 
