@@ -54,7 +54,7 @@ Este projeto foi construído com base nas seguintes práticas, garantindo total 
  * Não Coleta de Dados Pessoais: Não houve manipulação de dados sensíveis. Cada paciente é representado por um código de identificação único, garantindo a privacidade total.
 
  
- *Integridade e Confidencialidade: Esta abordagem nos permite realizar a análise de dados cardiológicos de forma segura e ética, mantendo a integridade das informações e a confidencialidade dos pacientes.
+ * Integridade e Confidencialidade: Esta abordagem nos permite realizar a análise de dados cardiológicos de forma segura e ética, mantendo a integridade das informações e a confidencialidade dos pacientes.
 
 
 ## 🛠️ TECNOLOGIAS UTILIZADAS
