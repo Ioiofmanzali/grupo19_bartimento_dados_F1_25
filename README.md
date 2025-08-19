@@ -6,7 +6,7 @@
 
 <br>
 
-# PROJETO FASE 1/25 - **BATIMENTOS DE DADOS - MAPEANDO O CORAÇÃO MODERNO**  
+# **BATIMENTOS DE DADOS - MAPEANDO O CORAÇÃO MODERNO**  
 
 ![capa](https://github.com/Ioiofmanzali/grupo19_bartimento_dados_F1_25/blob/main/assets/cora%C3%A7%C3%A3o.JPG)
 
