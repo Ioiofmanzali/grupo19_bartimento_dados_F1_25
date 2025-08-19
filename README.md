@@ -44,27 +44,17 @@ Nesse contexto, o projeto CardioIA surge como uma resposta inovadora a esse desa
 
 A jornada do projeto, iniciada nesta Fase 1 - Batimentos de Dados, tem como objetivo a coleta e preparação das bases de dados. Esta etapa é fundamental, pois é o alicerce sobre o qual todos os módulos futuros de Machine Learning, Visão Computacional e Processamento de Linguagem Natural serão desenvolvidos.
     
-### ❗ PRÉ-REQUISITOS 
+###  GOVERNANÇA E SEGURANÇA DOS DADOS 
 
-* Ambiente de desenvolvimento compatível com Python, como VSCode ou PyCharm.
+Este projeto foi construído com base nas seguintes práticas, garantindo total conformidade com a Lei Geral de Proteção de Dados (LGPD):
 
-* Versão do Python superior a 3.9 instalado no seu sistema operacional (Windows, macOS ou Linux). Recomendamos a versão mais recente estável.
+ * Anonimato dos Dados: O dataset utilizado é público, proveniente do Kaggle, e já passou por um processo de anonimização. 
 
-* Streamlit instalado (via pip)
 
-* Versão do Oracle SQL developer superior a 12c
+ * Não Coleta de Dados Pessoais: Não houve manipulação de dados sensíveis. Cada paciente é representado por um código de identificação único, garantindo a privacidade total.
 
-* Internet para download das bibliotecas e dependências
-
-Maiores informações sobre a instalação e uso dessas linguagens de Programação pode ser obtida nos sites oficiais:
-
-1. Python: https://www.python.org/
-
-2. Streamlit: https://docs.streamlit.io/get-started
-
-3. Oracle: https://www.oracle.com.br
-
-4. APEX Oracle: https://apex.oracle.com/pt-br/
+ 
+ *Integridade e Confidencialidade: Esta abordagem nos permite realizar a análise de dados cardiológicos de forma segura e ética, mantendo a integridade das informações e a confidencialidade dos pacientes.
 
 
 ## 🛠️ TECNOLOGIAS UTILIZADAS
