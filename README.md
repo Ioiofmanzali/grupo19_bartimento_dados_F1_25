@@ -44,7 +44,7 @@ Nesse contexto, o projeto CardioIA surge como uma resposta inovadora a esse desa
 
 A jornada do projeto, iniciada nesta Fase 1 - Batimentos de Dados, tem como objetivo a coleta e preparação das bases de dados. Esta etapa é fundamental, pois é o alicerce sobre o qual todos os módulos futuros de Machine Learning, Visão Computacional e Processamento de Linguagem Natural serão desenvolvidos.
     
-###  GOVERNANÇA E SEGURANÇA DOS DADOS 
+###  🔒 GOVERNANÇA E SEGURANÇA DOS DADOS 
 
 Este projeto foi construído com base nas seguintes práticas, garantindo total conformidade com a Lei Geral de Proteção de Dados (LGPD):
 
