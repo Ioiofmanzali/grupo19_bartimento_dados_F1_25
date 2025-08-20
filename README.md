@@ -54,118 +54,45 @@ Este projeto foi construído com base nas seguintes práticas, garantindo total 
 
 
 ## 📁 PARTE 1 - DATASETS NUMÉRICOS
+O dataset original é composto por por 12 colunas e dividido em 3 categorias de variáveis: 
 
-O dataset original pode ser acessado através do link [[KAGGLE DVC](https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset?select=cardio_train.csv)]
+### Variáveis Demográficas:
+    id: Identificador único do paciente.
+
+    age: Idade do paciente em dias.
+
+    gender: Sexo do paciente (1 = feminino, 2 = masculino).
+
+    height: Altura do paciente em centímetros.
+
+    weight: Peso do paciente em quilogramas.
+
+### Variáveis de Exame:
+    ap_hi: Pressão arterial sistólica.
+
+    ap_lo: Pressão arterial diastólica.
+
+    cholesterol: Nível de colesterol (1: normal, 2: acima do normal, 3: muito acima do normal).
+
+    gluc: Nível de glicose (1: normal, 2: acima do normal, 3: muito acima do normal).
+
+    smoke: Se o paciente fuma (0: não, 1: sim).
+
+    alco: Se o paciente consome álcool (0: não, 1: sim).
+
+    active: Nível de atividade física (0: não ativo, 1: ativo).
+
+### Variável-alvo
+
+    cardio: indica a presença de doença cardiovascular (0: ausente, 1: presente).
+
+Esse dataset pode ser acessado através do link [[KAGGLE DVC](https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset?select=cardio_train.csv)] 
 
 ## 📚 DATASETS
-
-### INMET
-
-Os datasets IMNET foram processados conforme o descrito a seguir:
-  - Preenchimento de valores ausentes: a maioria dos valores ausentes do dataset INMET está na coluna de radiacao_global, que não foi utilizada nesse projeto. Para os campos precipitacao_total não foram encontrados valores ausentes ou duplicados.
-
-### S2iD (Sistema Integrado de Informações sobre Desastres)
-
-O dataset  S2iD foi processado condorme o descrito a seguir:
-
-  - feito o download da série histórica e filtrados somente os desastres do tipo hidrológico (enxurradas, alagamentos, chuvas intensas, movimento de massa e inundações) para a cidade de São Paulo.
-    
-  - selecionadas as colunas mais significativas para uso no projeto para o treinamento de  ML/DL:
-    
-    * DATA_EVENTO
-    * TIPO_EVENTO
-    * ÓBITOS
-    * FERIDOS 
-    * ENFERMOS
-    * DESABRIGADOS
-    * DESALOJADOS
-    * DESAPARECIDOS
-    * RESIDENCIAS_DANIFICADAS
-    * RESIDENCIAS_DESTRUIDAS
-    * DANO_PATRIMONIO_PL
-
-  ** Obs: todos os parâmetros acima estão estritamente relacionados aos desastres naturais.
-  
-#### Glossário de Impactos em Desastres
-
-| Conceito                   | Descrição                                                                                               |
-| :------------------------- | :------------------------------------------------------------------------------------------------------ |
-| **Óbitos** | Número de pessoas que **morreram** em decorrência do evento.                                            |
-| **Feridos** | Pessoas que sofreram **lesões físicas** e necessitam de atendimento médico.                             |
-| **Enfermos** | Indivíduos que desenvolveram **doenças** ou tiveram sua saúde agravada por causa do evento.             |
-| **Desabrigados** | Pessoas que **perderam suas casas** e não têm onde morar, precisando de abrigo temporário.              |
-| **Desalojados** | Indivíduos que foram **forçados a sair de suas casas temporariamente**, mas podem retornar ou se abrigaram em casas de parentes/amigos. |
-| **Desaparecidos** | Pessoas cujo **paradeiro é desconhecido** após o evento e há preocupação com sua segurança ou vida.     |
-| **Residências Danificadas**| Casas que sofreram **algum tipo de estrago** estrutural ou material, mas podem ser reparadas.            |
-| **Residências Destruídas** | Casas que foram **completamente arrasadas** ou danificadas de forma irreparável.                        |
-| **Dano Patrimônio Público**| Prejuízos causados a **bens e infraestruturas de propriedade do governo** (escolas, hospitais, estradas, etc.). |
-  
-## ➡️ ARQUITETURA DO PROGRAMA
-
-O sistema é construído em Python e utiliza diversas bibliotecas para diferentes funcionalidades:
-
-* Streamlit: Para a criação da interface de usuário interativa.
-* Streamlit_autorefresh: 
-* Pandas: Para manipulação e análise de dados tabulares.
-* NumPy: Para operações numéricas.
-* Scikit-learn (sklearn): Para implementação de modelos de machine learning (Regressão Linear, SVR, Random Forest, Gradient Boosting), divisão de dados, otimização de hiperparâmetros (GridSearchCV) e métricas de avaliação (mean_squared_error).
-* OS: Para interação com o sistema operacional (criação de diretórios, verificação de arquivos).
-* Requests: Para realizar requisições HTTP para obter dados de uma API Oracle.
-* Datetime: Para manipulação de datas e horas.
-* Matplotlib e Plotly: Para criação de visualizações de dados.
-* Locale: Para formatação de números e datas de acordo com a localidade (português do Brasil).
-* IO (BytesIO): Para trabalhar com dados binários em memória.
-* Joblib: 
-
-Resumo geral da arquitetura do programa:
-
-| Arquivo/Pasta      | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| :----------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `app.py`           | **Interface de Usuário:** interface interativa (via Streamlit) que permite aos usuários visualizar as previsões, análises e o status geral do sistema. É o ponto de interação visual com as informações geradas pelos modelos e dados coletados.                                                                                                                                                                                                                                                                                                                                                      |
-| `main.py`          | **Lógica do ESP32 e Integração com Banco de Dados:** Script principal para a execução da lógica de comunicação com o ESP 32. Sua função central é coletar dados desses dispositivos e integrá-los ao banco de dados Oracle via chamadas de API, atuando como o ponto de entrada para a ingestão de dados brutos do hardware.                                                                                                                                                                                                                                                                            |
-| `oracle.sql`       | **Scripts de Banco de Dados:** Contém os comandos SQL necessários para a criação das tabelas no banco de dados Oracle, especificamente para armazenar dados de nível de água e volume de chuva.                                                                                                                                                                                                                                         |
-| `requirements.txt` | **Gerenciamento de Dependências:** Lista as bibliotecas Python de terceiros e suas respectivas versões das quais o projeto depende.                                                                                                                                                                                                                    |
-| `treinar_modelos.py` | **Treinamento de Modelos de ML:** Script dedicado ao ciclo de vida dos modelos preditivos. É responsável por carregar os datasets brutos, realizar o pré-processamento de dados, treinar os modelos de machine learning para previsão de chuva e nível esperado, serializá-los e salvá-los no formato `.joblib`.                                                                                                                                                                                                                                                                                 |
-| `utils.py`         | **Utilitário e Lógica de Negócio Central:** Contém funções auxiliares e a lógica de negócio crítica do sistema. Inclui as chamadas às APIs de terceiros (Oracle Cloud para dados de sensores e AWS Lambda para alertas SMS), incorpora a lógica de avaliação de risco de enchente (realizando cálculos e classificações), interage com o banco de dados Oracle para salvar leituras adicionais de sensores e garante o disparo automático de alertas SMS quando as condições de risco atingem limiares predefinidos. |
 
 
 ## SISTEMA DE ALERTA (AWS)
 
-![alertaaws](https://github.com/Ioiofmanzali/GLOBAL_SOLUTION_2_-GRUPO81TIAO/blob/main/assets/alertaaws.JPG)
-
-A arquitetura do sistema é composta por diversas camadas interconectadas, garantindo a coleta, processamento, análise e disseminação das informações:
-
-Um dispositivo ESP32 é responsável pela coleta de dados ambientais, como temperatura (Temp), umidade (Humid), nível do rio (RioLevel) e nível da chuva (Chuva).
-
-Os dados coletados são enviados para uma API de dados Oracle, onde são armazenados e ficam disponíveis para consumo.
-
-Um display local no ESP32 mostra as leituras em tempo real, indicando a temperatura, umidade, nível do rio e o nível da chuva.
-
-Um módulo central de Monitoramento dos Níveis do Rio e da Chuva acessa os dados da API Oracle.
-
-Os dados de nível atual (do rio e/ou da chuva) são enviados para um Aplicativo Streamlit com Inteligência Artificial.
-
-Para a geração de alertas proativos, a arquitetura se integra com serviços da Amazon Web Services (AWS):
-
-    Amazon API Gateway: Atua como um ponto de entrada seguro e escalável para as requisições que acionam o processo de alerta.
-    
-    AWS Lambda: Funções serverless que são acionadas via API Gateway para processar os dados de monitoramento e aplicar a lógica de negócio para determinar se um alerta deve ser enviado.
-    
-    Amazon SNS (Simple Notification Service): Uma vez que a função Lambda decide que um alerta é necessário, o SNS é utilizado para enviar notificações para os assinantes.
-
-O Amazon SNS envia as notificações de alerta diretamente para os usuários via SMS.
-
-A mensagem de alerta inclui informações cruciais como:
-
-    ALERTA ENCHENTE SÃO PAULO: Indicação clara do tipo de evento.
-    
-    Risco GRAVE: Classificação do risco.
-    
-    Nível atual: O nível atual do rio.
-    
-    Previsão: A quantidade de chuva prevista e o nível de rio esperado.
-    
-    Data e Hora: O momento em que o alerta foi emitido.
 
 
 ## 📊 ANÁLISE EXPLORATÓRIA DOS DADOS
