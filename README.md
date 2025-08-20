@@ -55,7 +55,7 @@ Este projeto foi construído com base nas seguintes práticas, garantindo total 
 
 ## 📁 PARTE 1 - DATASETS NUMÉRICOS
 
-O dataset original pode ser acessado através do link [KAGGLE DVC]([https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset?select=cardio_train.csv])
+O dataset original pode ser acessado através do link [[KAGGLE DVC](https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset?select=cardio_train.csv)]
 
 ## 📚 DATASETS
 
