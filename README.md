@@ -56,7 +56,7 @@ Este projeto foi construído com base nas seguintes práticas, garantindo total 
 ## 📁 PARTE 1 - DATASETS NUMÉRICOS
 O dataset original é composto por por 12 colunas e dividido em 3 categorias de variáveis: 
 
-### Variáveis Demográficas:
+### 👤 Variáveis Demográficas:
     id: Identificador único do paciente.
 
     age: Idade do paciente em dias.
@@ -67,7 +67,7 @@ O dataset original é composto por por 12 colunas e dividido em 3 categorias de 
 
     weight: Peso do paciente em quilogramas.
 
-### Variáveis de Exame:
+### 🩺 Variáveis de Exame:
     ap_hi: Pressão arterial sistólica.
 
     ap_lo: Pressão arterial diastólica.
@@ -82,7 +82,7 @@ O dataset original é composto por por 12 colunas e dividido em 3 categorias de 
 
     active: Nível de atividade física (0: não ativo, 1: ativo).
 
-### Variável-alvo
+### 🎯 Variável-alvo
 
     cardio: indica a presença de doença cardiovascular (0: ausente, 1: presente).
 
