@@ -53,56 +53,9 @@ Este projeto foi construído com base nas seguintes práticas, garantindo total 
  * Integridade e Confidencialidade: Esta abordagem nos permite realizar a análise de dados cardiológicos de forma segura e ética, mantendo a integridade das informações e a confidencialidade dos pacientes.
 
 
-## 🛠️ TECNOLOGIAS UTILIZADAS
+## 📁 PARTE 1 - DATASETS NUMÉRICOS
 
-![Streamlit](https://img.shields.io/badge/Streamlit-%23FE4B4B.svg?style=for-the-badge&logo=streamlit&logoColor=white) &nbsp; ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) &nbsp; ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=Oracle&logoColor=white) ![Oracle APEX](https://img.shields.io/badge/Oracle%20APEX-green?style=for-the-badge&logo=oracle&logoColor=white)
-
-### 1. ORACLE
-
-* Esse projeto utiliza duas funcionalidades Oracle:
-  
-  * API RESTful da Oracle, hospedada na Oracle Cloud, configurada para permitir tratamento de paginação e erros, garantindo que os dados necessários para as funcionalidades do projeto sejam carregados de maneira confiável.
-
-  * DB Oracle, para salvar os dados gerados pelo ESP 32, simulando uma situação real de captação de dados por sensores. 
-
-### API ORACLE
-
-  * Requisição HTTP GET:
-    
-Quando buscar_nivel_rio() ou buscar_volume_chuva() são chamadas, elas executam uma operação requests.get(). Isso instrui o programa a enviar uma requisição HTTP GET para a URL especificada (API_NIVEL_AGUA ou API_VOLUME_CHUVA) em um tempo limite de 5 segundos para a requisição. Se o servidor não responder dentro desse período, uma exceção será levantada.
-
-  * Recebimento da Resposta HTTP:
-    
-O servidor da API processa a requisição GET e, se tudo estiver correto, envia de volta uma resposta HTTP. Essa resposta contém um código de status (ex: 200 OK, 404 Not Found, 500 Internal Server Error) e o corpo da resposta. Isso garante que o programa não tente processar dados de uma requisição que falhou, tornando o tratamento de erros mais robusto.
-
-  * Decodificação JSON (response.json()):
-    
-Se a requisição foi bem-sucedida (código de status 2xx), o corpo da resposta é esperado que esteja no formato JSON (JavaScript Object Notation). A linha data = response.json() é responsável por parsear a string JSON recebida no corpo da resposta HTTP e convertê-la em um objeto Python em um formato específico - {'data_leitura': 'YYYY-MM-DDTHH:MM:SS', 'valor': X.Y} - que será transformado em um dicionário Python com as chaves 'data_leitura' e 'valor'.
-
-  * Tratamento de Erros:
-    
-As operações de consumo de API são encapsuladas em blocos try-except.
-  - except requests.exceptions: Captura qualquer erro relacionado à requisição HTTP (problemas de rede, timeout, erros de status HTTP capturados por raise_for_status()).
-  - except ValueError: Captura erros que ocorrem se a resposta da API não for um JSON válido ou se houver problemas na sua decodificação.
-
-  Em ambos os casos de erro, uma mensagem é exibida usando st.error (a aplicação é construída com Streamlit para exibir esses erros na interface do usuário) e a função retorna None, sinalizando que a operação de busca falhou.
-
-### 2. PYTHON
-
-* Atua como a linguagem principal para definir a arquitetura da aplicação web, organizando o conteúdo através de botões de navegação no menu principal.
-
-** maiores detalhes na seção Arquitetura do Programa
-
-### 3. STREAMLIT
-
-A interface do usuário é organizada em uma única página.
-
-![pagina_inicial](https://github.com/Ioiofmanzali/GLOBAL_SOLUTION_2_-GRUPO81TIAO/blob/main/assets/capast.JPG)
-
-
-A interface mostra os níveis atual, esperado e previsto do rio e a classificação do risco de enchente.
-
-Na aba lateral, podemos determinar o nivel de água (grave e moderado) e tambem simular situações com valores atribuidos de nível de rio e chuva. 
+O dataset original pode ser acessado através do link [KAGGLE DVC]([https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset?select=cardio_train.csv]
 
 ## 📚 DATASETS
 
