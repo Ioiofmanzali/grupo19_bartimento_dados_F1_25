@@ -84,7 +84,7 @@ O dataset original é composto por por 12 colunas e dividido em 3 categorias de 
 
 ### 🎯 Variável-alvo
 
-    cardio: indica a presença de doença cardiovascular (0: ausente, 1: presente).
+    cardio: indica a presença ou ausência de doença cardiovascular (0: ausente, 1: presente).
 
 Obs: Os números representam categorias de estado (como 'normal' ou 'acima do normal'; 'sim' ou 'não') e não devem ser interpretados como valores quantitativos. A exceção a essa regra se aplica às variáveis demográficas (age, height e weight) e as variáveis de exame relacionadas a pressão arterial (ap_hi e ap_lo). 
 
