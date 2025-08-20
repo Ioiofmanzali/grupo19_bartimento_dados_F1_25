@@ -68,9 +68,9 @@ O dataset original é composto por por 12 colunas e dividido em 3 categorias de 
     weight: Peso do paciente em quilogramas.
 
 ### 🩺 Variáveis de Exame:
-    ap_hi: Pressão arterial sistólica.
+    ap_hi: Pressão arterial sistólica em mmHg.
 
-    ap_lo: Pressão arterial diastólica.
+    ap_lo: Pressão arterial diastólica em mmHg.
 
     cholesterol: Nível de colesterol (1: normal, 2: acima do normal, 3: muito acima do normal).
 
@@ -86,7 +86,10 @@ O dataset original é composto por por 12 colunas e dividido em 3 categorias de 
 
     cardio: indica a presença de doença cardiovascular (0: ausente, 1: presente).
 
+Obs: Os números representam categorias de estado (como 'normal' ou 'acima do normal'; 'sim' ou 'não') e não devem ser interpretados como valores quantitativos. A exceção a essa regra se aplica às variáveis demográficas (age, height e weight) e as variáveis de exame relacionadas a pressão arterial (ap_hi e ap_lo). 
+
 Esse dataset pode ser acessado através do link [[KAGGLE DVC](https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset?select=cardio_train.csv)] 
+
 
 ## 📚 DATASETS
 
