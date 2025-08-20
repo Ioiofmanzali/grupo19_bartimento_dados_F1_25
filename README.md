@@ -26,11 +26,6 @@
 - <a href="https://www.linkedin.com/company/inova-fusca">Andre Godoi Chaviato</a>
 
 
-
-
-![Versão 1.0.0](https://img.shields.io/badge/Vers%C3%A3o%201.0.0-gray?style=flat)
-
-
 ## 🔍 SOBRE O PROJETO
 
 As doenças cardiovasculares (DCV) representam a principal causa de mortalidade e morbidade em escala global, um desafio de saúde pública que transcende fronteiras e sistemas de saúde. De acordo com a Organização Mundial da Saúde (OMS), as DCV são responsáveis por aproximadamente 19,8 milhões de mortes por ano no mundo, o que as coloca no topo da lista das causas de óbito. No Brasil, o cenário não é diferente: em 2022, as doenças cardiovasculares foram responsáveis pela perda de quase 400.000 vidas.
@@ -377,7 +372,7 @@ Uma vez na página do Wokwi, procure e clique no botão verde "Play" (geralmente
 
 ## 🗃 HISTÓRICO DE LANÇAMENTOS
 
-* 1.0.0 - 03/06/2025
+![Versão 1.0.0](https://img.shields.io/badge/Vers%C3%A3o%201.0.0-gray?style=flat)  - 03/09/2025
     
 
 ## 📋 Licença
