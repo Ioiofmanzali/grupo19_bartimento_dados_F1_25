@@ -134,7 +134,7 @@ import zipfile
 import glob
 
 # --- Configuração ---
-NUM_IMAGENS_POR_CLASSE = 25
+NUM_IMAGENS_POR_CLASSE = 200
 TOTAL_IMAGENS = NUM_IMAGENS_POR_CLASSE * 2
 
 # Define os nomes das pastas e arquivos de saída
@@ -154,10 +154,10 @@ os.makedirs(PASTA_DE_SAIDA)
 # --- 2. Carregar e filtrar metadados ---
 df = pd.read_csv(ARQUIVO_METADADOS)
 
-# Selecionar 25 imagens com o rótulo 'Cardiomegaly'
+# Selecionar 200 imagens com o rótulo 'Cardiomegaly'
 df_cardiomegaly = df[df['Finding Labels'] == 'Cardiomegaly'].head(NUM_IMAGENS_POR_CLASSE)
 
-# Selecionar 25 imagens com o rótulo 'No Finding'
+# Selecionar 200 imagens com o rótulo 'No Finding'
 df_no_finding = df[df['Finding Labels'] == 'No Finding'].head(NUM_IMAGENS_POR_CLASSE)
 
 # Combinar as duas seleções em um único DataFrame
