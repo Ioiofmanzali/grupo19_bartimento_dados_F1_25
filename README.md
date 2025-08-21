@@ -54,6 +54,7 @@ Este projeto foi construído com base nas seguintes práticas, garantindo total 
 
 
 ## 📁 PARTE 1 - DATASETS NUMÉRICOS
+
 O dataset original é composto por por 12 colunas e dividido em 3 categorias de variáveis: 
 
 ### 👤 Variáveis Demográficas:
@@ -89,117 +90,128 @@ O dataset original é composto por por 12 colunas e dividido em 3 categorias de 
 Obs: Os números representam categorias de estado (como 'normal' ou 'acima do normal'; 'sim' ou 'não') e não devem ser interpretados como valores quantitativos. A exceção a essa regra se aplica às variáveis demográficas (age, height e weight) e as variáveis de exame relacionadas a pressão arterial (ap_hi e ap_lo). 
 
 Esse dataset pode ser acessado através dos links abaixo:
+
 [[KAGGLE DVC](https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset?select=cardio_train.csv)] 
 
 [[GoogleDrive](https://drive.google.com/file/d/1Zj2PfvhN10cAB9Szs-Gg0pyQ7twgAKbe/view?usp=sharing)] 
 
-## 📚 DATASETS
+
+## 📁 PARTE 2 - DATASETS TEXTUAIS
 
 
-## SISTEMA DE ALERTA (AWS)
+## 📁 PARTE 3 - DADOS VISUAIS
 
+Para esse projeto o dataset selecionado está relacionado a radiografias de tórax por diversas razões: 
 
-
-## 📊 ANÁLISE EXPLORATÓRIA DOS DADOS
-
-O projeto é dividido em etapas principais: 
-
-Coleta e Preparação dos Dados:
-
-Foram utilizados dois arquivos CSV: inmet_sp.csv (contendo dados meteorológicos, incluindo precipitação) e desastres_sp.csv (com informações sobre eventos e desastres, onde extraímos dados relacionados ao nível de rios).
-As features "chuva" (do arquivo INMET) e "rio" (do arquivo de desastres) foram selecionadas para a análise.
-
-Análise Exploratória de Dados (EDA):
-
-Foram realzadas as etapas de pre-processamento e tratamento dos dados.
-Utilizamos histogramas para visualizar a frequência de ocorrência de diferentes volumes de chuva e níveis de rio.
-Box plots foram empregados para identificar a dispersão dos dados e a presença de outliers, que podem indicar eventos extremos (chuvas intensas ou níveis de rio muito elevados/baixos).
-
-Após a exploração e limpeza inicial, as features "chuva" e "rio" foram mescladas em um único conjunto de dados. Esta união foi feita com base em uma chave comum (provavelmente data ou localização, dependendo da estrutura original dos arquivos) para garantir a correlação correta entre os eventos de chuva e os níveis de rio correspondentes.
-
-Para visualização do codigo  e da visualizacao gráfica dos da análise exploratória sugerimos que acesse os arquivos **desastres.ipynb** e **inmet_sp.ipynb**, ambos localizados na pasta 'docs' desse repositório.
-
-## 📈 TREINAMENTO DO MODELO DE ML
-
-O projeto utiliza o modelo de Regressão Linear visto que há uma relação   modelos com o objetivo de encontrar a combinação que oferece o melhor desempenho de generalização para os dados, ou seja, que consegue fazer as previsões mais precisas em dados não vistos durante o treinamento para prever o risco de enchente. 
-
-A escolha da regressão linear como modelo ideal para analisar a relação entre "chuva" e "rio" neste projeto foi fortemente influenciada pelo tipo dos dados e tambem pelas caracteristicas das features serem quantitativas e contínuas.  Os modelos para nivel de chuva e nivel de rio foram salvos em .joblib e utilizados no app.py para previsão por IA.
-
-## 🌧️ ESP 32 COM SENSORES
-
-**Este projeto não requer hardware físico. Todos os componentes são virtuais e configurados dentro do ambiente de simulação Wokwi.**
-
-Será descrita a seguir a estruturação do código, funcionalidade implementadas, dependências de hardware e software, além dos parâmetros de configuração.
-
-![image](https://github.com/Ioiofmanzali/GLOBAL_SOLUTION_2_-GRUPO81TIAO/blob/main/assets/esp_32.JPG)
-
-
-### Hardware (Simulador Wokwi)
-
-  * Microcontrolador Virtual: ESP32 DevModule Kit C1 (selecionado no Wokwi).
-
-  * Display Virtual: LCD 20x4 com módulo I2C (adicionado ao diagrama do Wokwi).
-
-  * Sensores Virtuais:
-
-    Sensor de Temperatura e Umidade (DHT22) conectado no pino 4
-
-    Potenciômetro_1 (simulação de Chuva): Conectado ao pino 34
-    
-    Potenciômetro_2 (simulação de Nível do Rio): Conectado ao pino 35
-    
-  * Requisitos de Software / Bibliotecas
-    
-    Ambiente de Desenvolvimento Online:
-
-    Wokwi.com (para edição, simulação e execução do código).
-
-    Bibliotecas:
-    
-    Wire.h: Biblioteca padrão para comunicação I2C.
-    
-    LiquidCrystal_I2C.h: Biblioteca para controle de displays LCD via interface I2C.
-
-    DHT.h: Biblioteca para leitura de sensores DHT11/DHT22 (suporte à função DHTTYPE).
-
-    Adafruit_Sensor.h: Biblioteca genérica para sensores Adafruit (dependência da DHT.h).
-
-
-Obs: Para simular um ambiente node sensores captam os dados do ambiente foi utilizado no código sketch.ino uma funcionalidade para gerar dados aleatórios
-
-<p align="center">
-  <img src="https://github.com/Ioiofmanzali/GLOBAL_SOLUTION_2_-GRUPO81TIAO/blob/main/assets/dadosfake.JPG" alt="Descrição da Imagem 1" width="48%">
-  <img src="https://github.com/Ioiofmanzali/GLOBAL_SOLUTION_2_-GRUPO81TIAO/blob/main/assets/dadosfake1.JPG" alt="Descrição da Imagem 2" width="48%">
-</p>       
-
-
-[LINK PARA O PROJETO GLOBAL_SOLUTION_2](https://wokwi.com/projects/432676821844364289)
-
-
-## 📣 PRÓXIMOS PASSOS
-
-Este projeto foi desenvolvido com um protótipo funcional que demonstra o potencial de um sistema de monitoramento de enchentes, utilizando dados simulados ou de teste para suas validações.
-Acreditamos que esse é o começo de uma idéia com grande potencial  e com impacto real.
-
-   * Coleta e Integração de Dados Reais e Contínuo
-     
-   * Parcerias com Órgãos Governamentais para acesso aos dados de todas as estações de monitoramento
-
-   * Integraççao de outras fontes de dados que possam influenciar enchentes (temperatura, umidade, vazão, etc.)
-
-   * Aprimoramento dos Modelos de Machine Learning com dados reais e datasets mais robustos
-
-   * Re-treinamento contínuo dos modelos com os novos dados coletados, garantindo que eles se adaptem a padrões sazonais e mudanças ambientais.
-
-   *  Explorar e criar novas features a partir dos dados existentes
+ * A radiografia de tórax é uma ferramenta amplamente disponivel e de baixo custo para triagem e estratificação da doença cardíaca. Esses exames oferecem uma visualização direta da silhueta cardíaca em relação à cavidade torácica. Isso permite a implementação de uma tarefa de VC clara e clinicamente relevante: a detecção de cardiomegalia (aumento do coração) através do cálculo da Relação Cardiotorácica (RCT). A RCT é uma métrica estabelecida que os radiologistas usam, tornando sua automação um exemplo exemplar de como os algoritmos de VC podem replicar e padronizar a análise diagnóstica. A tarefa envolve a segmentação de estruturas anatômicas (coração e tórax), extração de características (diâmetros máximos) e classificação baseada em regras (RCT > 0.5), que se alinham perfeitamente com os princípios básicos da visão computacional.
    
-   *  Dashboards mais complexos com múltiplos painéis
-   
-   * Implementação de Alertas e Notificações personalizados e por múltiplos canais
+ * Grandes conjuntos de dados públicos e bem documentados, como o NIH ChestX-ray14 e o CheXpert de Stanford, estão prontamente disponíveis para uso em pesquisa acadêmica. Esses repositórios contêm dezenas a centenas de milhares de imagens, muitas já em formatos de imagem padrão como PNG ou JPG, eliminando a necessidade de conversão complexa de formatos.
 
-   * Lógica de disparo otimizada de alertas para evitar "falsos positivos" ou o envio excessivo de mensagens, considerando a duração do risco e a severidade.
+### Link do Dataset Entregável
 
-   * Deployment e Infraestrutura que permita que o projeto funcione 24/7 e atenda a usuários reais
+[Dataset no Google Drive](https://drive.google.com/drive/folders/1cY4-paZR1OyQm40j44xzDhXDnm8m5ENr?usp=sharing)
+
+## Conteúdo do Dataset Entregável
+
+*   Pasta imagens_rx: 400 imagens (200 imagens da feature cardiomegalia e 200 da feature sem cardiomegalia)
+*   1 arquivo CSV contendo o rótulo da patologia em cada imagem
+
+## Dataset Original Completo (Kaggle)
+
+[NIH Chest X-rays Dataset](https://www.kaggle.com/datasets/nih-chest-xrays/data/data)
+
+## Notebook Usado na Extração das Imagens
+
+[FIAP_F1_25](https://www.kaggle.com/code/iolandahfmanzali/fiap-f1-25?scriptVersionId=257394881)
+
+## Código Python Usado para Copiar as Imagens
+
+```python
+import pandas as pd
+import os
+import shutil
+import zipfile
+import glob
+
+# --- Configuração ---
+NUM_IMAGENS_POR_CLASSE = 25
+TOTAL_IMAGENS = NUM_IMAGENS_POR_CLASSE * 2
+
+# Define os nomes das pastas e arquivos de saída
+PASTA_DE_SAIDA = f'/kaggle/working/imagens_selecionadas_{TOTAL_IMAGENS}'
+NOME_ARQUIVO_CSV = f'metadata_{TOTAL_IMAGENS}_imagens_traduzido.csv'
+NOME_ARQUIVO_ZIP = f'/kaggle/working/dataset_raiox_{TOTAL_IMAGENS}.zip'
+
+# Caminhos dos dados dentro do ambiente Kaggle
+ARQUIVO_METADADOS = '/kaggle/input/nih-chest-xrays/data/Data_Entry_2017.csv'
+CAMINHO_PESQUISA_IMAGENS = '/kaggle/input/nih-chest-xrays/data/images_*/images/*.png'
+
+# --- 1. Criar diretório de saída ---
+if os.path.exists(PASTA_DE_SAIDA):
+    shutil.rmtree(PASTA_DE_SAIDA) # Limpa a pasta se já existir
+os.makedirs(PASTA_DE_SAIDA)
+
+# --- 2. Carregar e filtrar metadados ---
+df = pd.read_csv(ARQUIVO_METADADOS)
+
+# Selecionar 25 imagens com o rótulo 'Cardiomegaly'
+df_cardiomegaly = df[df['Finding Labels'] == 'Cardiomegaly'].head(NUM_IMAGENS_POR_CLASSE)
+
+# Selecionar 25 imagens com o rótulo 'No Finding'
+df_no_finding = df[df['Finding Labels'] == 'No Finding'].head(NUM_IMAGENS_POR_CLASSE)
+
+# Combinar as duas seleções em um único DataFrame
+df_selecionado = pd.concat([df_cardiomegaly, df_no_finding])
+
+# --- 3. Traduzir os rótulos no DataFrame selecionado ---
+translation_map = {
+    'Cardiomegaly': 'Cardiomegalia',
+    'No Finding': 'Nada Encontrado'
+}
+# Usamos.copy() para evitar o SettingWithCopyWarning
+df_selecionado_traduzido = df_selecionado.copy()
+df_selecionado_traduzido['Finding Labels'] = df_selecionado_traduzido['Finding Labels'].replace(translation_map)
+print("Rótulos traduzidos com sucesso no DataFrame.")
+
+# --- 4. Salvar o arquivo CSV com os dados traduzidos ---
+caminho_csv_saida = os.path.join(PASTA_DE_SAIDA, NOME_ARQUIVO_CSV)
+df_selecionado_traduzido.to_csv(caminho_csv_saida, index=False)
+print(f"Arquivo CSV '{NOME_ARQUIVO_CSV}' criado com os metadados traduzidos.")
+
+# --- 5. Mapear e copiar as imagens selecionadas ---
+print("Mapeando todos os caminhos de imagem...")
+mapa_de_imagens = {os.path.basename(p): p for p in glob.glob(CAMINHO_PESQUISA_IMAGENS)}
+print(f"Mapeamento concluído. {len(mapa_de_imagens)} imagens encontradas no total.")
+
+print(f"Copiando {len(df_selecionado)} imagens selecionadas...")
+imagens_copiadas = 0
+# Itera sobre o DataFrame original para garantir que os nomes dos arquivos correspondam
+for nome_arquivo in df_selecionado['Image Index']:
+    if nome_arquivo in mapa_de_imagens:
+        caminho_origem = mapa_de_imagens[nome_arquivo]
+        caminho_destino = os.path.join(PASTA_DE_SAIDA, nome_arquivo)
+        shutil.copy(caminho_origem, caminho_destino)
+        imagens_copiadas += 1
+    else:
+        print(f"Aviso: Imagem {nome_arquivo} não encontrada nos caminhos de pesquisa.")
+
+print(f"Cópia concluída. Total de imagens na pasta de saída: {imagens_copiadas}")
+
+# --- 6. Compactar a pasta (com imagens e CSV traduzido) para download ---
+if imagens_copiadas > 0:
+    shutil.make_archive(base_name=f'/kaggle/working/dataset_raiox_{TOTAL_IMAGENS}', 
+                        format='zip', 
+                        root_dir=PASTA_DE_SAIDA)
+    print(f"\nArquivo zip '{os.path.basename(NOME_ARQUIVO_ZIP)}' criado com sucesso!")
+    print("Você pode baixar este arquivo na seção 'Output' do seu Notebook Kaggle.")
+else:
+    print("\nNenhuma imagem foi copiada, o arquivo zip não foi criado.")
+```
+  
+
+## 📣 PRÓXIMAS FASES
+
+
 
 ## :octocat: CONTRIBUIÇÕES AO PROJETO
 
@@ -217,29 +229,6 @@ Como Contribuir:
 
 Seu Pull Request será revisado pela equipe e, se tudo estiver correto, será aceito e suas contribuições serão integradas ao projeto 😃!
 
-## COMO RODAR O PROGRAMA A PARTIR DO VSCODE
-
-### Streamlit
-1. Abrir o Terminal no VS Code
-     No menu superior, clique em Terminal e depois em Novo Terminal ou utilize o atalho "CTRL J". Isso abrirá um painel de terminal na parte inferior da janela do VS Code.
-     
-2. No terminal digite os comandos cd e run para abrir o arquivo e, em seguida, o navegador onde o aplicativo será aberto:
- 
- ** após executar o comando streamlit run app.py, o Streamlit irá iniciar um servidor local e abrir automaticamente o seu aplicativo em uma nova aba do seu navegador web padrão.
- 
- ** também aparecerá no terminal o endereço local onde o aplicativo está rodando (pode copiar e colar esse endereço no seu navegador, caso ele não abra automaticamente).
-
-### Wokwi
-
-1. Acesse o Wokwi
-
-Abra seu navegador e vá para o link de simulação do Wokwi para este projeto:
-
-[[LINK WOKWI](https://wokwi.com/projects/432676821844364289)]
-
-2. Inicie a Simulação
-  
-Uma vez na página do Wokwi, procure e clique no botão verde "Play" (geralmente localizado na parte superior ou lateral da interface) e poderá visualizar os dados gerados pelo código atraves do monitos de LCD.
 
 ## 📁 ESTRUTURA DE PASTAS
 
@@ -251,9 +240,7 @@ Uma vez na página do Wokwi, procure e clique no botão verde "Play" (geralmente
   
 - <b>README.md</b>: guia e explicação geral sobre o projeto
 
-##  🎬 VIDEO DEMONSTRATIVO
 
-[Video demonstrativo do Projeto](https://youtu.be/Y8b9HNfbJVU)
 
 ## 🗃 HISTÓRICO DE LANÇAMENTOS
 
