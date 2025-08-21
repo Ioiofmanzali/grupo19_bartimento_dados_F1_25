@@ -88,8 +88,10 @@ O dataset original é composto por por 12 colunas e dividido em 3 categorias de 
 
 Obs: Os números representam categorias de estado (como 'normal' ou 'acima do normal'; 'sim' ou 'não') e não devem ser interpretados como valores quantitativos. A exceção a essa regra se aplica às variáveis demográficas (age, height e weight) e as variáveis de exame relacionadas a pressão arterial (ap_hi e ap_lo). 
 
-Esse dataset pode ser acessado através do link [[KAGGLE DVC](https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset?select=cardio_train.csv)] 
+Esse dataset pode ser acessado através dos links abaixo:
+[[KAGGLE DVC](https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset?select=cardio_train.csv)] 
 
+[[GoogleDrive](https://drive.google.com/file/d/1Zj2PfvhN10cAB9Szs-Gg0pyQ7twgAKbe/view?usp=sharing)] 
 
 ## 📚 DATASETS
 
