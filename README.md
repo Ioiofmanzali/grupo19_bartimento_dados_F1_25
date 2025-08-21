@@ -111,20 +111,20 @@ Para esse projeto o dataset selecionado está relacionado a radiografias de tór
 
 [Dataset no Google Drive](https://drive.google.com/drive/folders/1cY4-paZR1OyQm40j44xzDhXDnm8m5ENr?usp=sharing)
 
-## Conteúdo do Dataset Entregável
+### Conteúdo do Dataset Entregável
 
 *   Pasta imagens_rx: 400 imagens (200 imagens da feature cardiomegalia e 200 da feature sem cardiomegalia)
 *   1 arquivo CSV contendo o rótulo da patologia em cada imagem
 
-## Dataset Original Completo (Kaggle)
+### Dataset Original Completo (Kaggle)
 
 [NIH Chest X-rays Dataset](https://www.kaggle.com/datasets/nih-chest-xrays/data/data)
 
-## Notebook Usado na Extração das Imagens
+### Notebook Usado na Extração das Imagens
 
 [FIAP_F1_25](https://www.kaggle.com/code/iolandahfmanzali/fiap-f1-25?scriptVersionId=257394881)
 
-## Código Python Usado para Copiar as Imagens
+### Código Python Usado para Copiar as Imagens
 
 ```python
 import pandas as pd
