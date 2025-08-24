@@ -98,70 +98,77 @@ Esse dataset pode ser acessado através dos links abaixo:
 
 ## 📁 PARTE 2 - DATASETS TEXTUAIS
 
-# 📊 Análise de Textos Médicos com NLP  
+# 📊 Análise de Textos Médicos com NLP
 
-Este repositório aplica **técnicas de Processamento de Linguagem Natural (NLP)** a dois artigos científicos relacionados a doenças cardiovasculares e fatores de risco. O objetivo é demonstrar como algoritmos de NLP podem extrair insights relevantes para projetos de **Inteligência Artificial em Saúde**, auxiliando em prevenção, diagnóstico e políticas públicas.  
+Este repositório demonstra como **técnicas de Processamento de Linguagem Natural (NLP)** em artigos científicos sobre **doenças cardiovasculares** e fatores de risco associados podem ser explorados. O objetivo é extrair insights relevantes que apoiem projetos de **Inteligência Artificial em Saúde**, contribuindo para prevenção, diagnóstico e políticas públicas.
 
 ---
 
-## 🗂️ Fontes utilizadas  
+## 🗂️ Artigos Utilizados
 
-1. **Artigo 1** – *Inflamação sistêmica causada pela periodontite crônica em pacientes vítimas de ataque cardíaco isquêmico agudo*  
-   - Associação entre periodontite, inflamação sistêmica e risco de infarto.  
-   - Contém dados clínicos (LDL, HDL, triglicerídeos, glicemia) e agentes biológicos (bactérias periodontais).  
+1. **[Inflamação sistêmica causada pela periodontite crônica em pacientes vítimas de ataque cardíaco isquêmico agudo](https://github.com/Ioiofmanzali/grupo19_bartimento_dados_F1_25/blob/main/Ataque_Cardiaco.pdf)**  
+   - Estuda a associação entre periodontite, inflamação sistêmica e risco de infarto.  
+   - Contém dados clínicos: LDL, HDL, triglicerídeos, glicemia, e agentes biológicos como bactérias periodontais.
 
-2. **Artigo 2** – *Associação entre saúde cardiovascular e depressão autorreferida: Pesquisa Nacional de Saúde 2019*  
-   - Relação entre saúde mental (depressão) e indicadores de saúde cardiovascular (IMC, tabagismo, hipertensão, diabetes).  
-   - Baseado em dados populacionais (57.898 adultos brasileiros).  
+2. **[Associação entre saúde cardiovascular e depressão autorreferida: Pesquisa Nacional de Saúde 2019](https://github.com/Ioiofmanzali/grupo19_bartimento_dados_F1_25/blob/main/Depressao_Doencas_Cardiovasculares.pdf)**  
+   - Explora a relação entre saúde mental (depressão) e indicadores de saúde cardiovascular: IMC, tabagismo, hipertensão e diabetes.  
+   - Base populacional: 57.898 adultos brasileiros.
 
-## ⚙️ Possíveis aplicações de NLP  
+---
 
-### 🔬 1. Extração de Entidades Médicas (NER – Named Entity Recognition)  
-- Identificação automática de **biomarcadores** (LDL, HDL, glicemia).  
-- Reconhecimento de **agentes infecciosos** (*Porphyromonas gingivalis*, *Prevotella intermedia*).  
-- Extração de **condições clínicas** (hipertensão, diabetes, depressão).  
-- Mapeamento para terminologias padronizadas (ex.: SNOMED-CT, UMLS).  
+## ⚙️ Aplicações de NLP
 
-👉 **Relevância:** possibilita a integração direta com **sistemas clínicos** e bancos de dados de saúde, estruturando informações que, de outra forma, estariam apenas em texto livre.  
+### 🔬 1. Extração de Entidades Médicas (NER)
+- Identificação automática de **biomarcadores**: LDL, HDL, glicemia.  
+- Reconhecimento de **agentes infecciosos**: *Porphyromonas gingivalis*, *Prevotella intermedia*.  
+- Extração de **condições clínicas**: hipertensão, diabetes, depressão.  
+- Mapeamento para terminologias padronizadas como **SNOMED-CT** e **UMLS**.
 
+**💡 Benefício:** Permite estruturar informações clínicas de textos livres, facilitando integração com **bancos de dados de saúde** e **sistemas clínicos**.
 
-### 📑 2. Classificação de Tópicos  
-- **Artigo 1:** classificação em *doenças periodontais*, *inflamação sistêmica*, *cardiopatias isquêmicas*.  
-- **Artigo 2:** classificação em *fatores biológicos*, *hábitos comportamentais*, *saúde mental*.  
+---
 
-👉 **Relevância:** permite organizar automaticamente literatura científica, **auxiliando pesquisadores** na busca de evidências e conexões entre condições de saúde.  
+### 📑 2. Classificação de Tópicos
+- **Artigo 1:** *doenças periodontais*, *inflamação sistêmica*, *cardiopatias isquêmicas*.  
+- **Artigo 2:** *fatores biológicos*, *hábitos comportamentais*, *saúde mental*.
 
-### ❤️ 3. Mineração de Relações Causais  
-- Detectar padrões do tipo:  
+**💡 Benefício:** Organiza automaticamente a literatura científica, apoiando **pesquisadores** na identificação de conexões entre condições de saúde.
+
+---
+
+### ❤️ 3. Mineração de Relações Causais
+- Identificação de padrões como:  
   - *“Periodontite crônica → inflamação → risco de infarto”* (Artigo 1).  
-  - *“Depressão → maior prevalência de DCV”* (Artigo 2).  
+  - *“Depressão → maior prevalência de doenças cardiovasculares”* (Artigo 2).
 
-👉 **Relevância:** contribui para a construção de **modelos explicáveis de risco clínico**, essenciais em **IA aplicada à saúde**, onde interpretabilidade é crítica.  
+**💡 Benefício:** Fundamenta **modelos explicáveis de risco clínico**, essenciais para **IA interpretável em saúde**.
 
+---
 
-### 🙂 4. Análise de Sentimentos e Autorrelatos  
-- Nos casos de saúde mental (Artigo 2), NLP pode processar **depoimentos de pacientes** para detectar indícios de tristeza, ansiedade ou risco de depressão.  
-- Algoritmos de classificação podem distinguir entre relatos **neutros**, **positivos** ou **depressivos**.  
+### 🙂 4. Análise de Sentimentos e Autorrelatos
+- Processamento de depoimentos de pacientes para detectar indícios de **tristeza, ansiedade ou risco de depressão**.  
+- Classificação automática de relatos em **neutros**, **positivos** ou **depressivos**.
 
-👉 **Relevância:** auxilia na **triagem populacional** e em sistemas de **saúde pública**, especialmente em atenção primária.  
+**💡 Benefício:** Suporta **triagem populacional** e programas de **atenção primária à saúde mental**.
 
+---
 
-### 📊 5. Integração com Modelos Preditivos  
-- Dados extraídos dos textos podem alimentar modelos de **machine learning** para previsão de risco cardiovascular ou risco de depressão.  
-- Exemplo: pacientes com periodontite crônica grave + LDL elevado = **maior probabilidade de infarto**.  
+### 📊 5. Integração com Modelos Preditivos
+- Dados extraídos dos textos podem alimentar **modelos de Machine Learning** para prever risco cardiovascular ou depressão.  
+- Exemplo: pacientes com periodontite crônica grave + LDL elevado → maior probabilidade de infarto.
 
-👉 **Relevância:** viabiliza **sistemas de apoio à decisão clínica**, capazes de **alertar profissionais de saúde** e propor intervenções preventivas.  
+**💡 Benefício:** Viabiliza **sistemas de apoio à decisão clínica** e recomendações preventivas.
 
+---
 
-## 🧠 Conclusão  
+## 🧠 Conclusão
 
-A exploração dos artigos com NLP mostra como a Inteligência Artificial pode:  
-- Transformar **textos científicos** em **bases de conhecimento estruturadas**.  
-- Auxiliar no **diagnóstico precoce** de doenças cardiovasculares e mentais.  
-- Apoiar **políticas públicas de saúde**, identificando fatores de risco em larga escala.  
-- Conectar **saúde física e saúde mental**, em uma visão integrada do paciente.  
+A aplicação de NLP aos artigos selecionados evidencia como a **Inteligência Artificial pode transformar textos científicos em bases de conhecimento estruturadas**, permitindo:
 
-Essas análises reforçam o papel da IA em saúde como ferramenta de **suporte clínico, prevenção populacional e avanço científico**.  
+- Diagnóstico precoce de doenças cardiovasculares e mentais.  
+- Apoio à **formulação de políticas públicas** de saúde.  
+- Integração da **saúde física e mental** do paciente.  
+- Avanço científico com insights de alto valor clínico.  
 
 ## 📁 PARTE 3 - DADOS VISUAIS
 
