@@ -305,11 +305,11 @@ Seu Pull Request será revisado pela equipe e, se tudo estiver correto, será ac
 
 ## 📁 ESTRUTURA DE PASTAS
 
-- <b>assets</b>: imagens utilizadas no projeto e documentação
+- <b>assets</b>: imagens utilizadas no projeto
 
-- <b>docs</b>: códigos auxiliares utilizadas no projeto
-  
-- <b>src</b>: códigos principais do programa
+- <b>docs</b>: códigos auxiliares utilizadas no projeto t datasets em extensão .csv
+
+- conteudo: documento resumo em pdf 
   
 - <b>README.md</b>: guia e explicação geral sobre o projeto
 
