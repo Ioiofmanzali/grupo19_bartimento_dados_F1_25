@@ -282,10 +282,6 @@ else:
 ```
   
 
-## 📣 PRÓXIMAS FASES
-
-
-
 ## :octocat: CONTRIBUIÇÕES AO PROJETO
 
 Ficamos muito felizes com a sua contribuição e valorizamos cada sugestão e esforço dedicado a aprimorá-lo.
@@ -309,7 +305,7 @@ Seu Pull Request será revisado pela equipe e, se tudo estiver correto, será ac
 
 - <b>docs</b>: códigos auxiliares utilizadas no projeto t datasets em extensão .csv
 
-- conteudo: documento resumo em pdf 
+- <b>conteudo<b>: documento resumo em pdf 
   
 - <b>README.md</b>: guia e explicação geral sobre o projeto
 
