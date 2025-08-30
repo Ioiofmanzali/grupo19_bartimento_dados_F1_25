@@ -98,13 +98,13 @@ Esse dataset pode ser acessado através dos links abaixo:
 
 ## 📁 PARTE 2 - DATASETS TEXTUAIS
 
-# 📊 Análise de Textos Médicos com NLP
+### 📊 Análise de Textos Médicos com NLP
 
 Este repositório demonstra como **técnicas de Processamento de Linguagem Natural (NLP)** em artigos científicos sobre **doenças cardiovasculares** e fatores de risco associados podem ser explorados. O objetivo é extrair insights relevantes que apoiem projetos de **Inteligência Artificial em Saúde**, contribuindo para prevenção, diagnóstico e políticas públicas.
 
 ---
 
-## 🗂️ Artigos Utilizados
+### 🗂️ Artigos Utilizados
 
 1. **[Inflamação sistêmica causada pela periodontite crônica em pacientes vítimas de ataque cardíaco isquêmico agudo](https://github.com/Ioiofmanzali/grupo19_bartimento_dados_F1_25/blob/main/Ataque_Cardiaco.pdf)**  
    - Estuda a associação entre periodontite, inflamação sistêmica e risco de infarto.  
@@ -116,9 +116,9 @@ Este repositório demonstra como **técnicas de Processamento de Linguagem Natur
 
 ---
 
-## ⚙️ Aplicações de NLP
+### ⚙️ Aplicações de NLP
 
-### 🔬 1. Extração de Entidades Médicas (NER)
+#### 🔬 1. Extração de Entidades Médicas (NER)
 - Identificação automática de **biomarcadores**: LDL, HDL, glicemia.  
 - Reconhecimento de **agentes infecciosos**: *Porphyromonas gingivalis*, *Prevotella intermedia*.  
 - Extração de **condições clínicas**: hipertensão, diabetes, depressão.  
@@ -128,7 +128,7 @@ Este repositório demonstra como **técnicas de Processamento de Linguagem Natur
 
 ---
 
-### 📑 2. Classificação de Tópicos
+#### 📑 2. Classificação de Tópicos
 - **Artigo 1:** *doenças periodontais*, *inflamação sistêmica*, *cardiopatias isquêmicas*.  
 - **Artigo 2:** *fatores biológicos*, *hábitos comportamentais*, *saúde mental*.
 
@@ -159,9 +159,8 @@ Este repositório demonstra como **técnicas de Processamento de Linguagem Natur
 
 **💡 Benefício:** Viabiliza **sistemas de apoio à decisão clínica** e recomendações preventivas.
 
----
 
-## 🧠 Conclusão
+### 🧠 Conclusão
 
 A aplicação de NLP aos artigos selecionados evidencia como a **Inteligência Artificial pode transformar textos científicos em bases de conhecimento estruturadas**, permitindo:
 
@@ -184,7 +183,7 @@ Para esse projeto o dataset selecionado está relacionado a radiografias de tór
 
 ### Conteúdo do Dataset Entregável
 
-*   Pasta imagens_rx: 400 imagens (200 imagens da feature cardiomegalia e 200 da feature sem cardiomegalia)
+*   Pasta imagens_rx: 200 imagens (100 imagens da feature cardiomegalia e 100 da feature sem cardiomegalia)
 *   1 arquivo CSV contendo o rótulo da patologia em cada imagem
 
 ### Dataset Original Completo (Kaggle)
