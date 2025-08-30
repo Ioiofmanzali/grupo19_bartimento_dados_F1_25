@@ -1,3 +1,9 @@
+""" 
+
+Código criado para dicidir o dataset principal em 2 conjuntos de dados distintos baseados nas features  'cardiomegalia' e 'vnao_cardiomegalia'
+
+"""
+
 import pandas as pd
 
 # Carrega o dataset original
@@ -16,3 +22,4 @@ df_cardiomegalia.to_csv('cardiomegalia.csv', index=False)
 df_nao_cardiomegalia.to_csv('nao_cardiomegalia.csv', index=False)
 
 print("Arquivos CSV criados com sucesso: 'cardiomegalia.csv' e 'nao_cardiomegalia.csv'")
+
