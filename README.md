@@ -58,6 +58,7 @@ Este projeto foi construído com base nas seguintes práticas, garantindo total 
 O dataset original é composto por por 12 colunas e dividido em 3 categorias de variáveis: 
 
 ### 👤 Variáveis Demográficas:
+
     id: Identificador único do paciente.
 
     age: Idade do paciente em dias.
@@ -69,6 +70,7 @@ O dataset original é composto por por 12 colunas e dividido em 3 categorias de 
     weight: Peso do paciente em quilogramas.
 
 ### 🩺 Variáveis de Exame:
+
     ap_hi: Pressão arterial sistólica em mmHg.
 
     ap_lo: Pressão arterial diastólica em mmHg.
@@ -82,6 +84,7 @@ O dataset original é composto por por 12 colunas e dividido em 3 categorias de 
     alco: Se o paciente consome álcool (0: não, 1: sim).
 
     active: Nível de atividade física (0: não ativo, 1: ativo).
+    
 
 ### 🎯 Variável-alvo
 
@@ -114,7 +117,6 @@ Este repositório demonstra como **técnicas de Processamento de Linguagem Natur
    - Explora a relação entre saúde mental (depressão) e indicadores de saúde cardiovascular: IMC, tabagismo, hipertensão e diabetes.  
    - Base populacional: 57.898 adultos brasileiros.
 
----
 
 ### ⚙️ Aplicações de NLP
 
@@ -126,7 +128,6 @@ Este repositório demonstra como **técnicas de Processamento de Linguagem Natur
 
 **💡 Benefício:** Permite estruturar informações clínicas de textos livres, facilitando integração com **bancos de dados de saúde** e **sistemas clínicos**.
 
----
 
 #### 📑 2. Classificação de Tópicos
 - **Artigo 1:** *doenças periodontais*, *inflamação sistêmica*, *cardiopatias isquêmicas*.  
@@ -136,7 +137,7 @@ Este repositório demonstra como **técnicas de Processamento de Linguagem Natur
 
 ---
 
-### ❤️ 3. Mineração de Relações Causais
+#### ❤️ 3. Mineração de Relações Causais
 - Identificação de padrões como:  
   - *“Periodontite crônica → inflamação → risco de infarto”* (Artigo 1).  
   - *“Depressão → maior prevalência de doenças cardiovasculares”* (Artigo 2).
@@ -145,7 +146,7 @@ Este repositório demonstra como **técnicas de Processamento de Linguagem Natur
 
 ---
 
-### 🙂 4. Análise de Sentimentos e Autorrelatos
+#### 🙂 4. Análise de Sentimentos e Autorrelatos
 - Processamento de depoimentos de pacientes para detectar indícios de **tristeza, ansiedade ou risco de depressão**.  
 - Classificação automática de relatos em **neutros**, **positivos** ou **depressivos**.
 
@@ -153,14 +154,14 @@ Este repositório demonstra como **técnicas de Processamento de Linguagem Natur
 
 ---
 
-### 📊 5. Integração com Modelos Preditivos
+#### 📊 5. Integração com Modelos Preditivos
 - Dados extraídos dos textos podem alimentar **modelos de Machine Learning** para prever risco cardiovascular ou depressão.  
 - Exemplo: pacientes com periodontite crônica grave + LDL elevado → maior probabilidade de infarto.
 
 **💡 Benefício:** Viabiliza **sistemas de apoio à decisão clínica** e recomendações preventivas.
 
 
-### 🧠 Conclusão
+#### 🧠 Conclusão
 
 A aplicação de NLP aos artigos selecionados evidencia como a **Inteligência Artificial pode transformar textos científicos em bases de conhecimento estruturadas**, permitindo:
 
