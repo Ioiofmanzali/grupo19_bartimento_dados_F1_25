@@ -178,6 +178,8 @@ Para esse projeto o dataset selecionado está relacionado a radiografias de tór
    
  * Grandes conjuntos de dados públicos e bem documentados, como o NIH ChestX-ray14 e o CheXpert de Stanford, estão prontamente disponíveis para uso em pesquisa acadêmica. Esses repositórios contêm dezenas a centenas de milhares de imagens, muitas já em formatos de imagem padrão como PNG ou JPG, eliminando a necessidade de conversão complexa de formatos.
 
+Obs.: na pasta assets foi feito o upload das 200 imagens e salvas em duas pastas (imagens e imagens.1). Para a fase 1 somente doi feito o upload do dataset com 200 imagens, sem a divisão por features (cardiomegalia / sem cardiomegalia).  
+
 ### Link do Dataset Entregável
 
 [Dataset no Google Drive](https://drive.google.com/drive/folders/1cY4-paZR1OyQm40j44xzDhXDnm8m5ENr?usp=sharing)
