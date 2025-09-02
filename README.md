@@ -305,7 +305,7 @@ Seu Pull Request será revisado pela equipe e, se tudo estiver correto, será ac
 
 - <b>docs</b>: códigos auxiliares utilizadas no projeto t datasets em extensão .csv
 
-- <b>conteudo<b>: documento resumo em pdf 
+- <b>conteudo<b>: documento resumo e artigos cientificos em pdf 
   
 - <b>README.md</b>: guia e explicação geral sobre o projeto
 
