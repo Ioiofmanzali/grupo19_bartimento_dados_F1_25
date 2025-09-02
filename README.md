@@ -313,7 +313,7 @@ Seu Pull Request será revisado pela equipe e, se tudo estiver correto, será ac
 
 ## 🗃 HISTÓRICO DE LANÇAMENTOS
 
-![Versão 1.0.0](https://img.shields.io/badge/Vers%C3%A3o%201.0.0-gray?style=flat)  - 03/09/2025
+![Versão 1.0.0](https://img.shields.io/badge/Vers%C3%A3o%201.0.0-gray?style=flat)  - 01/09/2025
     
 
 ## 📋 Licença
